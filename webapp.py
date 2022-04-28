@@ -9,12 +9,13 @@ app = Flask(__name__)
 
 COMPANY = Company("BCIT")
 
+
 @app.route("/")
 def homepage():
     company = Company("BCIT")
+    return ("Hello world")
+    # return render_template("home.html", company=COMPANY)
 
-    return render_template("home.html", company=COMPANY)
 
 if __name__ == "__main__":
     app.run(debug=True)
-
