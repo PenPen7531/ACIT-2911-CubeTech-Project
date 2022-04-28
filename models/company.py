@@ -20,3 +20,11 @@ class Company():
             employee_obj = Employee(employee_first_name, employee_last_name,
                                     employee_id, employee_department, employee_salary, employee_age)
             self.employees.append(employee_obj)
+
+    def save(self):
+        employee_list = []
+        for employee in self.employees:
+            emp_dict = employee.to_dict()
+            employee_list.append(emp_dict)
+        file = open("data/employees.json", "w")
+        file.write(json.dumps(employee_list))
