@@ -36,3 +36,12 @@ class Company():
                 self.employees.pop(i)
                 return True
         return False
+
+    def add(self, employee):
+        if isinstance(employee, Employee):
+            self.employees.append(employee)
+
+    def find_employee_by_id(self, emp_id):
+        for employee in self.employees:
+            if employee.employee_id == emp_id:
+                return emp_id
