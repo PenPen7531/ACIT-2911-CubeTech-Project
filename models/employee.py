@@ -3,12 +3,12 @@ class Employee:
         if type(first_name) != str:
             raise TypeError
         self.first_name = first_name
-        
+
         if type(last_name) != str:
             raise TypeError
         self.last_name = last_name
 
-        if type(employee_id)!=str:
+        if type(employee_id) != str:
             raise TypeError
         self.employee_id = employee_id
 
@@ -16,12 +16,23 @@ class Employee:
             raise TypeError
         self.employee_department = employee_department
 
-        if type(employee_salary)!=int:
+        if type(employee_salary) != int:
             raise TypeError
         self.employee_salary = employee_salary
 
-        if type(employee_age)!= int:
+        if type(employee_age) != int:
             raise TypeError
         self.employee_age = employee_age
 
-# add typeerrors for the classes
+    def to_dict(self):
+        '''
+        this methods creates an array of employees
+        '''
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "employee_id": self.employee_id,
+            "employee_department": self.employee_department,
+            "employee_salary": self.employee_salary,
+            "employee_age": self.employee_age
+        }
