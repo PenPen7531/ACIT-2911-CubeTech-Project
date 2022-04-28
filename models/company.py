@@ -1,3 +1,4 @@
+import enum
 import json
 from models.employee import Employee
 
@@ -28,3 +29,10 @@ class Company():
             employee_list.append(emp_dict)
         file = open("data/employees.json", "w")
         file.write(json.dumps(employee_list))
+
+    def delete(self, emp_id):
+        for i, employee in enumerate(self.employees):
+            if employee.employee_id == emp_id:
+                self.employees.pop(i)
+                return True
+        return False
