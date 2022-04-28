@@ -3,6 +3,7 @@ class Employee:
         if type(first_name) != str:
             raise TypeError
         self.first_name = first_name
+        
         if type(last_name) != str:
             raise TypeError
         self.last_name = last_name
