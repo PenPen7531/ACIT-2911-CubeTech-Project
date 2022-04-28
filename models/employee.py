@@ -3,3 +3,8 @@ class Employee:
         self.first_name = first_name
         self.last_name = last_name
         self.employee_id = employee_id
+        self.employee_department = employee_department
+        self.employee_salary = employee_salary
+        self.employee_age = employee_age
+
+# add typeerrors for the classes
