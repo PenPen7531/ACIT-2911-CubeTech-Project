@@ -4,8 +4,8 @@
     "last_name": "Ortega",
     "employee_id": "62689cd5b02f9a2e61b8560b",
     "employee_department": "Accounting",
-    "employee_salary": "41244",
-    "employee_age": "55"
+    "employee_salary": 41244,
+    "employee_age": 55
   },
   {
     "first_name": "Evangelina",
