@@ -1,4 +1,3 @@
-import enum
 import json
 from models.employee import Employee
 
