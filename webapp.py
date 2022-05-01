@@ -27,6 +27,14 @@ def homepage():
     except:
         return "Error", 404
 
+@app.route("/view/<employee_id>")
+def view(employee_id):
+    employee=COMPANY.find_employee_by_id(employee_id)
+    if employee!=None:
+        return render_template("view.html", employee=employee, company=COMPANY), 201
+    else:
+        return "Employee not found", 404
+
 
 @app.route("/create", methods=["GET", "POST"])
 def create_page():
@@ -44,6 +52,7 @@ def create_page():
         COMPANY.add(new_emp)
         COMPANY.save()
         return redirect("/")
+
 
 @app.route("/delete/<employee_id>")
 def delete(employee_id):
