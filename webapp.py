@@ -62,32 +62,6 @@ def delete(employee_id):
     else:
         return "Unsucessful", 404
 
-@app.route("/edit/<employee_id>", methods=["GET", "POST"])
-def put_user(employee_id):
-    emp=COMPANY.find_employee_by_id(employee_id)
-    if request.method=="GET":
-        return render_template("edit.html", emp=emp)
-    if request.method=="POST":
-        emp_fname=request.form.get("first_name")
-        emp_lname=request.form.get("last_name")
-        emp_id=request.form.get("employee_id")
-        emp_department=request.form.get("employee_department")
-        emp_salary=request.form.get("employee_salary")
-        emp_age=request.form.get("employee_age")
-        if emp.first_name != emp_fname:
-            emp.first_name = emp_fname
-        if emp.last_name != emp_lname:
-            emp.last_name=emp_lname
-        if emp.employee_id!= emp_id:
-            emp.employee_id=emp_id
-        if emp.employee_department!= emp_department:
-            emp.employee_department=emp_department
-        if emp.employee_salary!=emp_salary:
-            emp.employee_salary=emp_salary
-        if emp.employee_age!= emp_age:
-            emp.employee_age= emp_age
-        COMPANY.save()
-        return render_template("view.html", employee=emp, company=COMPANY)
 
 
 if __name__ == "__main__":
