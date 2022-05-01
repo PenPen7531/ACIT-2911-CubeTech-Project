@@ -40,10 +40,19 @@ def create_page():
         employee_department = request.form.get("employee_department")
         employee_salary = request.form.get("employee_salary")
         employee_age = request.form.get("employee_age")
-        new_emp = Employee(employee_fname, employee_lname, str(employee_id), employee_department, int(employee_salary), int(employee_age))
+        new_emp = Employee(employee_fname, employee_lname, employee_id, employee_department, int(employee_salary), int(employee_age))
         COMPANY.add(new_emp)
         COMPANY.save()
-        return render_template("home.html", company=COMPANY)
+        return redirect("/")
+
+@app.route("/delete/<employee_id>")
+def delete(employee_id):
+    if COMPANY.delete(employee_id):
+        COMPANY.save()
+        return redirect("/")
+    else:
+        return "Unsucessful", 404
+
 
 
 if __name__ == "__main__":
