@@ -44,3 +44,10 @@ class Company():
         for employee in self.employees:
             if employee.employee_id == emp_id:
                 return employee
+
+    def find_employees_by_department(self, department):
+        employee_in_dept=[]
+        for employee in self.employees:
+            if employee.employee_department==department:
+                employee_in_dept.append(employee)
+        return employee_in_dept

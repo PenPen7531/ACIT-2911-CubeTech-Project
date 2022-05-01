@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ company.name }} Employee Database</title>
+    <title>{{ department.employee_department }} Database</title>
     <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
@@ -13,9 +13,10 @@
     <body>
         <table>
             <div class="main_heading">
-            <h1>{{ company.name }} Employee Database</h1>
+            <h1>{{ department.employee_department }} Database</h1>
             </div>
             <h3><a href="/create">Create New Employee</a></h3>
+            <h3><a href="/">Clear Filters</a></h3>
             <!-- <label for="departments">Filter by Department </label>
             <select name="departments" id="departments">
                 <option value="marketing">Marketing</option>
@@ -38,7 +39,7 @@
                 <th colspan="2">Methods</th>
             </thead>
         <tbody>
-            {% for employee in company.employees %} 
+            {% for employee in department %} 
             <tr>
                 <td>{{ employee.employee_id }}</td>
                 <td>{{ employee.first_name }}</td>

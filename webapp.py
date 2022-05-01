@@ -20,10 +20,15 @@ def student_obj_to_dict(employees):
     return employee_list
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def homepage():
     try:
-        return render_template("home.html", company=COMPANY), 201
+        if request.method=="GET":
+            return render_template("home.html", company=COMPANY), 201
+        if request.method=="POST":
+            department=request.form.get("department")
+            print(department)
+            return redirect("/department/"+department)
     except:
         return "Error", 404
 
@@ -90,7 +95,12 @@ def put_user(employee_id):
         COMPANY.save()
         return render_template("view.html", employee=emp, company=COMPANY)
 
-
+@app.route("/department/<employee_department>")
+def show_department(employee_department):
+    print(employee_department)
+    department=COMPANY.find_employees_by_department(employee_department)
+    print(department[0].first_name)
+    return render_template("department.html", department=department)
 
 if __name__ == "__main__":
     app.run(debug=True)
