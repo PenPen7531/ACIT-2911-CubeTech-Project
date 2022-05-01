@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employee {{ employee.employee_id }}</title>
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <h1>{{ company.name }} employee ID: {{ employee.employee_id }}</h1>
+    <h3>First Name: {{ employee.first_name }}</h3>
+    <h3>Last Name: {{ employee.last_name }}</h3>
+    <h3>Employee Department: {{ employee.employee_department }}</h3>
+    <h3>Employee Salary: {{ employee.employee_salary }}</h3>
+    <h3>Employee Age: {{ employee.employee_age }}</h3>
+    <a href="/">Home</a>
+    <br>
+    <a href="/edit/{{ employee.employee_id }}">Edit Employee</a>
+    <a href="/delete/{{ employee.employee_id }}">Delete Employee</a>
+
+</body>
+</html>
