@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee: {{emp.employee_id }}</title>
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <form method="POST">
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" name="employee_id" id="post_input" value="{{ emp.employee_id }}" required/>
+        <br>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="post_input" value="{{ emp.first_name }}" required/>
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="post_input" value="{{ emp.last_name }}" required/>
+        <br>
+        <label for="employee_department">Department:</label>
+        <input type="text" name="employee_department" id="post_input" value="{{ emp.employee_department }}" required/>
+        <br>
+        <label for="employee_salary">Salary:</label>
+        <input type="number" name="employee_salary" min="0" id="post_input" value="{{ emp.employee_salary }}" required/>
+        <br>
+        <label for="employee_age">Age:</label>
+        <input type="number" name="employee_age" min="0" max="200" id="post_input" value="{{ emp.employee_age }}" required/>
+
+        <br>
+        <input type="submit" value="Edit Data"/>
+        <br>
+        <a href="/">Home</a>
+
+    </form>
+</body>
+</html>
