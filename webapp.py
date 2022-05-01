@@ -7,14 +7,18 @@ from models.employee import Employee
 
 app = Flask(__name__)
 
-COMPANY = Company("BCIT")
 
-
+try:
+    COMPANY = Company("BCIT")
+except:
+    print("Error, invalid JSON data")
+    
 @app.route("/")
 def homepage():
-    company = Company("BCIT")
-    return ("Hello world")
-    # return render_template("home.html", company=COMPANY)
+    try:
+        return render_template("home.html", company=COMPANY), 201
+    except:
+        return "Error", 404
 
 
 if __name__ == "__main__":

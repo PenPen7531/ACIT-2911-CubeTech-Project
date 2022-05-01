@@ -1,63 +1,45 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <title>Employee Database</title>
-</head>
-<body>
-    <main>
-        <h1>BCIT Employee Database</h1>
-        <div id="employee-table">
-            <h3><a id="create-emp" href="#">Create New Employee</a></h3>
-            <div id="table-container">
-                <table>
-                    <thead>
-                        <th>Employee ID</th>
-                        <th>Employee First Name</th>
-                        <th>Employee Last Name</th>
-                        <th>Employee Department</th>
-                        <th>Employee Salary</th>
-                        <th>Employee Age</th>
-                        <th colspan="2">Methods</th>
-                    </thead>
-                    <tbody id="table-body">
-                        <tr>
-                            <td>Employee ID</td>
-                            <td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Department</td>
-                            <td>Salary</td>
-                            <td>Age</td>
-                            <td><a href="#">Delete</a></td>
-                            <td><a href="#">View</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- JS to test adding employee (Deleted later on) -->
-        <script type="text/javascript" >
-            const table = document.getElementById('table-body')
-            const data = `
-                    <tr>
-                        <td>Employee ID</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>Department</td>
-                        <td>Salary</td>
-                        <td>Age</td>
-                        <td><a href="#">Delete</a></td>
-                        <td><a href="#">View</a></td>
-                    </tr> `
-            const addBtn = document.getElementById('create-emp')
-            addBtn.addEventListener('click', addEmp)
-                   function addEmp() {
-                    table.insertAdjacentHTML('afterbegin', data)
-                   } 
-        </script>
+    <title>{{ company.name }} Employee Database</title>
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
-    </main>
-</body>
+
+</head>
+    <body>
+        <table>
+            <div class="main_heading">
+            <h1>{{ company.name }} Employee Database</h1>
+            </div>
+            <h3><a href="/create">Create New Employee</a></h3>
+            <thead>
+                <th>Employee ID</th>
+                <th>Employee First Name</th>
+                <th>Employee Last Name</th>
+                <th>Employee Department</th>
+                <th>Employee Salary</th>
+                <th>Employee Age</th>
+                <th colspan="2">Methods</th>
+            </thead>
+        <tbody>
+            {% for employee in company.employees %} 
+            <tr>
+                <td>{{ employee.employee_id }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.employee_department }}</td>
+                <td>${{ employee.employee_salary }}</td>
+                <td>{{ employee.employee_age }}</td>
+                <td><a href="/delete/{{ employee.employee_id }}">Delete</a></td>
+                <td><a href="/view/{{ employee.employee_id }}">View</a></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </body>
 </html>
