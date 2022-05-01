@@ -6,12 +6,18 @@ from models.company import Company
 from models.employee import Employee
 
 app = Flask(__name__)
-
-
 try:
     COMPANY = Company("BCIT")
 except:
     print("Error, invalid JSON data")
+
+
+def student_obj_to_dict(employees):
+    employee_list = []
+    for employee in employees:
+        employee_dict = employee.to_dict()
+        employee_list.append(employee_dict)
+    return employee_list
 
 
 @app.route("/")
@@ -26,8 +32,9 @@ def homepage():
 def create_page():
     if request.method == "GET":
         return render_template("create.html")
+
     if request.method == "POST":
-        employee_fname = request.form.get("firstname")
+        employee_fname = request.form.get("first_name")
         employee_lname = request.form.get("last_name")
         employee_id = request.form.get("employee_id")
         employee_department = request.form.get("employee_department")
