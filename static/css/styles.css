@@ -69,3 +69,8 @@ tr a {
 tr a:hover {
     text-decoration: underline;
 }
+
+label {
+    font-family: monospace ;
+    font-weight: bold;
+}
