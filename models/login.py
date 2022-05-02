@@ -8,8 +8,16 @@ class Login:
         for login in logins:
             admin_username = login.get("username")
             admin_password = login.get("password")
-            admin_obj=Admin(admin_username, admin_password)
+            admin_database = login.get("database")
+            admin_id = login.get("id")
+            admin_obj=Admin(admin_username, admin_password, admin_database)
             self.login.append(admin_obj)
+
+    def find_login_by_username(self, username):
+        for login in self.login:
+            if login.username == username:
+                return login
+        return None
 
     def save(self):
         login_list = []
@@ -24,4 +32,8 @@ class Login:
             if login.username==username and login.password==password:
                 return True
         return False 
+
+    def add_login(self, admin):
+        if isinstance(admin, Admin):
+            self.login.append(admin)
             

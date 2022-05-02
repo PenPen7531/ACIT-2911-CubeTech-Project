@@ -1,4 +1,6 @@
-[{
-    "username":"admin",
-    "password": "P@ssw0rd"
-}]
+[
+  { "username": "admin", "password": "P@ssw0rd", "database": "bcit" },
+  { "username": "sap", "password": "sappassword", "database": "sap" },
+  { "username": "jeff", "password": "wang", "database": "microsoft" },
+  { "username": "michelle", "password": "michelle", "database": "Coffe" }
+]

@@ -8,31 +8,28 @@ class Company():
             raise TypeError
         self.name = name
         self.employees = []
-        file = open("data/employees.json")
-        employees = json.load(file)
-        for employee in employees:
-            employee_first_name = employee.get("first_name")
-            employee_last_name = employee.get("last_name")
-            employee_id = employee.get("employee_id")
-            employee_department = employee.get("employee_department")
-            employee_salary = employee.get("employee_salary")
-            employee_age = employee.get("employee_age")
-            employee_email = employee.get("employee_email")
-            employee_phone = employee.get("employee_phone")
-            employee_address = employee.get("employee_address")
-            employee_gender = employee.get("employee_gender")
-            date_hired = employee.get("date_hired")
-            employee_obj = Employee(employee_first_name, employee_last_name,
-                                    employee_id, employee_department, employee_salary, employee_age, employee_email,
-                                    employee_phone, employee_address, employee_gender, date_hired)
-            self.employees.append(employee_obj)
+        try:
+            file = open(f"data/{self.name}.json")
+            employees = json.load(file)
+            for employee in employees:
+                employee_first_name = employee.get("first_name")
+                employee_last_name = employee.get("last_name")
+                employee_id = employee.get("employee_id")
+                employee_department = employee.get("employee_department")
+                employee_salary = employee.get("employee_salary")
+                employee_age = employee.get("employee_age")
+                employee_obj = Employee(employee_first_name, employee_last_name,
+                                        employee_id, employee_department, employee_salary, employee_age)
+                self.employees.append(employee_obj)
+        except:
+            self.employees = []
 
     def save(self):
         employee_list = []
         for employee in self.employees:
             emp_dict = employee.to_dict()
             employee_list.append(emp_dict)
-        file = open("data/employees.json", "w")
+        file = open(f"data/{self.name}.json", "w")
         file.write(json.dumps(employee_list))
 
     def delete(self, emp_id):
