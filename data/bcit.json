@@ -1,1 +1,41 @@
-[{"first_name": "hareem", "last_name": "fatima", "employee_id": "3532", "employee_department": "IT", "employee_salary": 100000, "employee_age": 22, "employee_email": "hfatima@my.bcit.ca", "employee_phone": "6049992345", "employee_address": "42 kjafd st", "employee_gender": "female", "date_hired": "Sun Sep 25 2016 07:31:00 GMT-0700 (Pacific Daylight Time)"}]
+[
+  {
+    "first_name": "hareem",
+    "last_name": "fatima",
+    "employee_id": "3532",
+    "employee_department": "IT",
+    "employee_salary": 100000,
+    "employee_age": 22,
+    "employee_email": "hfatima@my.bcit.ca",
+    "employee_phone": "6049992345",
+    "employee_address": "42 kjafd st",
+    "employee_gender": "female",
+    "date_hired": "Sun Sep 25 2016 07:31:00 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Hickman ",
+    "last_name": "Mcmahon",
+    "employee_id": "62702df9256cac249abe4d37",
+    "employee_department": "Accounting",
+    "employee_salary": 71623,
+    "employee_age": 32,
+    "employee_email": "hickmanmcmahon@silodyne.com",
+    "employee_phone": " +1 (938) 494-3013",
+    "employee_address": "631 Hendrickson Place, Marenisco, Nebraska, 8566",
+    "employee_gender": "male",
+    "date_hired": "Tue Dec 16 2014 12:36:58 GMT-0800 (Pacific Standard Time)"
+  },
+  {
+    "first_name": "Taylor ",
+    "last_name": "Bennett",
+    "employee_id": "62702df918e32f099cf2da99",
+    "employee_department": "Accounting",
+    "employee_salary": 114135,
+    "employee_age": 25,
+    "employee_email": "taylorbennett@silodyne.com",
+    "employee_phone": " +1 (834) 527-2073",
+    "employee_address": "456 Melba Court, Dotsero, American Samoa, 8536",
+    "employee_gender": "male",
+    "date_hired": "Mon Nov 16 2015 07:35:15 GMT-0800 (Pacific Standard Time)"
+  }
+]
