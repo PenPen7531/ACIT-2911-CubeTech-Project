@@ -12,11 +12,6 @@ app = Flask(__name__)
 
 LOGIN=False
 
-try:
-    COMPANY = Company("BCIT")
-except:
-    print("Error, invalid JSON data")
-
 
 def student_obj_to_dict(employees):
     employee_list = []
@@ -37,6 +32,12 @@ def login():
         password=request.form.get("password")
         authenicate=user.login_authenticate(username, password)
         if authenicate:
+            
+            user_data=user.find_login_by_username(username)
+            
+            global COMPANY 
+            COMPANY = Company(user_data.database)
+              
             LOGIN=True
             return redirect("/view")
         else:
@@ -138,20 +139,35 @@ def show_department(employee_department):
     if LOGIN:
         print(employee_department)
         department=COMPANY.find_employees_by_department(employee_department)
-        print(department[0].first_name)
         return render_template("department.html", department=department)
     else:
         return "Invalid Credentials. Unable to view department", 404
 
 @app.route("/logout")
 def logout():
-
     if LOGIN:
         return redirect("/")
     else:
         return "Invalid Credentials. Login has not been done", 404
     
 
+@app.route("/createAdmin", methods=["GET", "POST"])
+def create_admin():
+    if request.method == "GET":
+        return render_template("createAdmin.html")
+
+    if request.method == "POST":
+        admin_username = request.form.get("username")
+        admin_password = request.form.get("password")
+        admin_database = request.form.get("database_name")
+        new_admin = Admin(admin_username, admin_password, admin_database)
+        users=Login()
+        users.add_login(new_admin)
+        users.save()
+        new_company = Company(new_admin.database)
+        new_company.save()
+        return redirect("/")
+   
 if __name__ == "__main__":
     app.run(debug=True)
 

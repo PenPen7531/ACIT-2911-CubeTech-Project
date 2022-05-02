@@ -1,11 +1,18 @@
+from unittest.util import strclass
+
+
 class Admin:
-    def __init__(self, admin_username, admin_password):
+    def __init__(self, admin_username, admin_password, admin_database):
         if type(admin_username) != str:
             raise TypeError
         self.username = admin_username
         if type(admin_password) != str:
             raise TypeError
         self.password = admin_password
+        if type(admin_database) != str:
+            raise TypeError
+        self.database = admin_database
+        
 
      
 
@@ -17,5 +24,6 @@ class Admin:
         return {
             "username": self.username,
             "password": self.password,
+            "database": self.database
             
         }

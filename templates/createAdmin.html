@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Create New Employee</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
 
 </head>
@@ -14,10 +14,14 @@
         <input type="text" name = "username" id ="post_input" required />
         <br>
         <label for = "password">Password:</label>
-        <input type="password" name = "password" id ="post_input" required />
+        <input type="text" name = "password" id ="post_input" required />
         <br>
-        <input type = "submit" value = "Login"/>
-        <a href="/createAdmin">Create New Database</a>
+        <label for = "database_name">Database Name:</label>
+        <input type="text" name = "database_name" id ="post_input" required />
+        <br>
+
+        <input type = "submit" value = "Create Account"/>
+        <a href="/">Cancel</a>
     </form>
 </body>
 </html>
