@@ -17,8 +17,14 @@ class Company():
             employee_department = employee.get("employee_department")
             employee_salary = employee.get("employee_salary")
             employee_age = employee.get("employee_age")
+            employee_email = employee.get("employee_email")
+            employee_phone = employee.get("employee_phone")
+            employee_address = employee.get("employee_address")
+            employee_gender = employee.get("employee_gender")
+            date_hired = employee.get("date_hired")
             employee_obj = Employee(employee_first_name, employee_last_name,
-                                    employee_id, employee_department, employee_salary, employee_age)
+                                    employee_id, employee_department, employee_salary, employee_age, employee_email,
+                                    employee_phone, employee_address, employee_gender, date_hired)
             self.employees.append(employee_obj)
 
     def save(self):
@@ -46,8 +52,8 @@ class Company():
                 return employee
 
     def find_employees_by_department(self, department):
-        employee_in_dept=[]
+        employee_in_dept = []
         for employee in self.employees:
-            if employee.employee_department==department:
+            if employee.employee_department == department:
                 employee_in_dept.append(employee)
         return employee_in_dept
