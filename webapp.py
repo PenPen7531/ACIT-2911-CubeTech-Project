@@ -2,7 +2,7 @@
 import json
 from flask import Flask, request, jsonify, render_template, redirect
 import requests
-
+import os
 from models.company import Company
 from models.employee import Employee
 from models.admin import Admin
@@ -189,5 +189,24 @@ def create_admin():
         new_company.save()
         return redirect("/")
    
+
+@app.route("/confirm", methods=["GET", "POST"])
+def delete_admin():
+    if request.method=="GET":
+        return render_template("delete_admin.html"), 200
+    if request.method=="POST":
+        admin_username=request.form.get("username")
+        admin_password=request.form.get("password")
+        admin_database=request.form.get("database")
+        user=Login()
+        authenicate=user.login_authenticate(admin_username, admin_password)
+        if authenicate:
+            user.delete_admin(admin_username)
+            user.save()
+            return redirect("/")
+        else:
+            return render_template("createerror.html"), 404
+
+
 if __name__ == "__main__":
     app.run(debug=True)
