@@ -31,5 +31,5 @@ def test_to_dict():
         "database": 'root_database'
     }
 
-    assert admin.Admin.to_dict(admin.Admin('admin', 'root', 'root_database'))
+    assert admin.Admin.to_dict(admin.Admin('admin', 'root', 'root_database')) == test_dict
 

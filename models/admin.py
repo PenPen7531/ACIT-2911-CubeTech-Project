@@ -5,6 +5,8 @@ class Admin:
     def __init__(self, admin_username, admin_password, admin_database):
         if type(admin_username) != str:
             raise TypeError
+        if len(admin_username) < 1:
+            raise ValueError
         self.username = admin_username
         if type(admin_password) != str:
             raise TypeError
