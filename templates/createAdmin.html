@@ -5,23 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Employee</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
 </head>
 <body>
-    <form method = "POST">
-        <label for = "username">Username:</label>
-        <input type="text" name = "username" id ="post_input" required />
-        <br>
-        <label for = "password">Password:</label>
-        <input type="text" name = "password" id ="post_input" required />
-        <br>
-        <label for = "database_name">Database Name:</label>
-        <input type="text" name = "database_name" id ="post_input" required />
-        <br>
+    <div class="flex-mid">
+        <form method = "POST">
+            <label for = "username">Username:</label>
+            <input type="text" name = "username" id ="post_input" required />
+            <br>
+            <br>
+            <label for = "password">Password:</label>
+            <input type="text" name = "password" id ="post_input" required />
+            <br>
+            <br>
+            <label for = "database_name">Database Name:</label>
+            <input type="text" name = "database_name" id ="post_input" required />
+            <br>
 
-        <input type = "submit" value = "Create Account"/>
-        <a href="/">Cancel</a>
-    </form>
+            <input type = "submit" value = "Create Account"/>
+            <a href="/">Cancel</a>
+        </form>
+    </div>
 </body>
 </html>

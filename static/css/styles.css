@@ -80,14 +80,22 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .h1-head {
-    font-size: 4em;
+    font-size: 7em;
+}
+
+label, input {
+    font-size: 2em;
 }
 
 .input-right {
-    align-self: flex-end;
+    font-size: 1.75em;
+    margin-left: 85%;
 }
 
+.login-a {
+    font-size: 1.5em;
+    margin-left: 54%;
+}
