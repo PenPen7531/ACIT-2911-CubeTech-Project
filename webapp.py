@@ -134,12 +134,15 @@ def put_user(employee_id):
     else:
         return "Invalid Credentials. Unable to edit employee", 404
 
-@app.route("/department/<employee_department>")
+@app.route("/department/<employee_department>", methods=["GET", "POST"])
 def show_department(employee_department):
     if LOGIN:
-        print(employee_department)
-        department=COMPANY.find_employees_by_department(employee_department)
-        return render_template("department.html", department=department)
+        if request.method=="GET":
+            department=COMPANY.find_employees_by_department(employee_department)
+            return render_template("department.html", department=department)
+        if request.method=="POST":
+                department=request.form.get("department")
+                return redirect("/department/"+department)
     else:
         return "Invalid Credentials. Unable to view department", 404
 
