@@ -24,3 +24,12 @@ def test_init_failure():
     with pytest.raises(TypeError):
         admin.Admin('admin', 'root', 5)
 
+def test_to_dict():
+    test_dict = {
+        "username": 'admin',
+        "password": 'root',
+        "database": 'root_database'
+    }
+
+    assert admin.Admin.to_dict(admin.Admin('admin', 'root', 'root_database'))
+
