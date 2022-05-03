@@ -162,6 +162,9 @@ def create_admin():
         admin_database = request.form.get("database_name")
         new_admin = Admin(admin_username, admin_password, admin_database)
         users=Login()
+        new_user=users.find_login_by_username(admin_username)
+        if new_user != None:
+            return "Error, User already in database", 404
         users.add_login(new_admin)
         users.save()
         new_company = Company(new_admin.database)
