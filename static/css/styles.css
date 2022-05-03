@@ -92,10 +92,21 @@ label, input {
 
 .input-right {
     font-size: 1.75em;
-    margin-left: 85%;
 }
 
 .login-a {
-    font-size: 1.5em;
-    margin-left: 54%;
+    font-size: .875em;
+    text-decoration: none;
+}
+
+.login-btns {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#post-form {
+    display: flex;
+    flex-direction: column;
 }
