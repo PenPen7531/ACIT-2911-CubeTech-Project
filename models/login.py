@@ -1,5 +1,6 @@
 import json
 from models.admin import Admin
+import os
 class Login:
     def __init__(self):
         file = open("data/logins.json")
@@ -40,6 +41,14 @@ class Login:
     def check_database_name(self, database):
         for login in self.login:
             if login.database==database:
+                return True
+        return False
+
+    def delete_admin(self, username):
+        for i, user in enumerate(self.login):
+            if user.username == username:
+                self.login.pop(i)
+                os.remove(f"./data/{user.database}.json")
                 return True
         return False
             
