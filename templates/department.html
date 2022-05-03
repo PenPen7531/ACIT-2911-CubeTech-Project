@@ -17,6 +17,11 @@
             </div>
             <h3><a href="/create">Create New Employee</a></h3>
             <h3><a href="/view">Clear Filters</a></h3>
+            <form method = "POST">
+                <label for = "department">Department Search:</label>
+                <input type="text" name = "department" id ="post_input"/>
+                <input type = "submit" value = "Search Department"/>
+            </form>
             <!-- <label for="departments">Filter by Department </label>
             <select name="departments" id="departments">
                 <option value="marketing">Marketing</option>
@@ -29,11 +34,7 @@
                 <th>Employee ID</th>
                 <th>Employee First Name</th>
                 <th>Employee Last Name</th>
-                <th>Employee Department<form method = "POST">
-                    <label for = "department">Department Search:</label>
-                    <input type="text" name = "department" id ="post_input"/>
-                    <input type = "submit" value = "Search Department"/>
-                </form></th>
+                <th>Employee Department</th>
                 <th>Employee Salary</th>
                 <th>Employee Age</th>
                 <th colspan="2">Methods</th>
