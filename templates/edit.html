@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Employee: {{emp.employee_id }}</title>
     <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">s
 </head>
 <body>
     <form method="POST">
@@ -27,23 +27,9 @@
         <br>
         <label for="employee_age">Age:</label>
         <input type="number" name="employee_age" min="0" max="200" id="post_input" value="{{ emp.employee_age }}" required/>
+
         <br>
-        <label for="employee_email">Email:</label>
-        <input type="text" name="employee_email" id="post_input" value="{{ emp.employee_email }}" required/>
-        <br>
-        <label for="employee_phone">Phone Number:</label>
-        <input type="text" name="employee_phone" id="post_input" value="{{ emp.employee_phone }}" required/>
-        <br>
-        <label for="employee_address">Home Address:</label>
-        <input type="text" name="employee_address" id="post_input" value="{{ emp.employee_address }}" required/>
-        <br>
-        <label for="employee_gender">Gender:</label>
-        <input type="text" name="employee_gender" id="post_input" value="{{ emp.employee_gender }}" required/>
-        <br>
-        <label for="date_hired">Hiring Date:</label>
-        <input type="text" name="date_hired" id="post_input" value="{{ emp.date_hired }}" required/>
-        <br>
-        <input type="submit" value="Confirm Changes"/>
+        <input type="submit" value="Edit Data"/>
         <br>
         <a href="/view">Home</a>
 

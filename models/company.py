@@ -22,7 +22,7 @@ class Company():
                                         employee_id, employee_department, employee_salary, employee_age)
                 self.employees.append(employee_obj)
         except:
-            self.employees = []
+            self.employees=[]
 
     def save(self):
         employee_list = []
@@ -49,8 +49,8 @@ class Company():
                 return employee
 
     def find_employees_by_department(self, department):
-        employee_in_dept = []
+        employee_in_dept=[]
         for employee in self.employees:
-            if employee.employee_department == department:
+            if employee.employee_department==department:
                 employee_in_dept.append(employee)
         return employee_in_dept
