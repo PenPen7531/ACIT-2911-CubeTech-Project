@@ -1,1 +1,1 @@
-[]
+[{"first_name": "Jeffrey", "last_name": "Wang", "employee_id": "A01", "employee_department": "Accounting", "employee_salary": 32000, "employee_age": 23}, {"first_name": "Michelle", "last_name": "Shin", "employee_id": "A02", "employee_department": "Sales", "employee_salary": 45000, "employee_age": 25}, {"first_name": "Brian", "last_name": "Xian", "employee_id": "A03", "employee_department": "Software Development", "employee_salary": 60000, "employee_age": 20}]
