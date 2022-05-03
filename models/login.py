@@ -36,4 +36,10 @@ class Login:
     def add_login(self, admin):
         if isinstance(admin, Admin):
             self.login.append(admin)
+
+    def check_database_name(self, database):
+        for login in self.login:
+            if login.database==database:
+                return True
+        return False
             
