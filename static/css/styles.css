@@ -109,4 +109,10 @@ label, input {
 #post-form {
     display: flex;
     flex-direction: column;
+    width: 225px;
+}
+
+#create-admin-input {
+    display: flex;
+    flex-direction: column;
 }
