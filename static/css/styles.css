@@ -38,6 +38,10 @@ th, td {
     font-size: 16px;
 }
 
+th:hover {
+    cursor: pointer;
+}
+
 #employee-table {
     margin-top: 25px;
    display: flex;
@@ -63,7 +67,7 @@ th, td {
 tr a {
     text-decoration: none;
     font-size: 16px;
-    color: #31748f;
+    color: #0d6efd;
 }
 
 tr a:hover {
@@ -116,3 +120,80 @@ label, input {
     display: flex;
     flex-direction: column;
 }
+
+#home-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 20px;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 40px;
+}
+
+.home-content {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#home-nav .home-tag {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+#home-nav a {
+    font-family: arial,sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(83, 80, 80);
+}
+
+#home-nav a:hover {
+    color: black;
+}
+
+.home-tag {
+    font-size: 31px;
+    text-shadow: 1px 1px 1px rgba(75, 73, 73, 0.79);
+}
+
+#home-newemp-depsearch {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+#home-newemp-depsearch a {
+    text-decoration: none;
+}
+
+#dep-search {
+    width: 210px;
+    height: 27px;
+}
+
+.search-icon {
+    background-color: transparent;
+    border: none;
+}
+
+#search-label {
+    font-family: arial,sans-serif;
+    color: #4675C0;
+}
+
+.home-content table {
+    margin-right: 80px;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #d4e1f6;
+ }
