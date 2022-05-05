@@ -6,21 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Employee {{ employee.employee_id }}</title>
     <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view.css') }}">
 
 
 </head>
 <body>
-    <h1>{{ company.name }} employee ID: {{ employee.employee_id }}</h1>
-    <h3>First Name: {{ employee.first_name }}</h3>
-    <h3>Last Name: {{ employee.last_name }}</h3>
-    <h3>Employee Department: {{ employee.employee_department }}</h3>
-    <h3>Employee Salary: {{ employee.employee_salary }}</h3>
-    <h3>Employee Age: {{ employee.employee_age }}</h3>
-    <a href="/view">Home</a>
-    <br>
-    <a href="/edit/{{ employee.employee_id }}">Edit Employee</a>
-    <a href="/delete/{{ employee.employee_id }}">Delete Employee</a>
+    <div class="main">
+        <div class="name">
+            <h2>EmpNet</h2>
+        </div>
+    
 
+        <div class="home">
+            <a href="/view">Home</a>
+        </div>
+
+    </div>
+
+    <div class="emp_id">
+        <p>{{ company.name }} employee ID: {{ employee.employee_id }}</p>
+    </div>  
+
+    <div class="main_container">
+        <div class="emp_info">
+            <p>First Name: {{ employee.first_name }}</p>
+            <br>
+            <p>Last Name: {{ employee.last_name }}</p>
+            <br>
+            <p>Employee Department: {{ employee.employee_department }}</p>
+            <br>
+            <p>Employee Salary: {{ employee.employee_salary }}</p>
+            <br>
+            <p>Employee Age: {{ employee.employee_age }}</p>
+        </div>
+        <div class="nav_bar">
+            <a href="/edit/{{ employee.employee_id }}">Edit Employee</a>
+            <br>
+            <br>
+            <br>
+            <a href="/delete/{{ employee.employee_id }}">Delete Employee</a>
+        </div>
+
+
+
+    </div>
 </body>
 </html>
