@@ -65,3 +65,49 @@ p{
     background-color: #d6dae3;
 
 } */
+
+#edit-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.home-tag {
+    font-size: 35px;
+    color:  #4675C0;
+    font-weight: bold;
+}
+
+#home-nav .home-tag {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+#home-nav a {
+    font-family: arial,sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(83, 80, 80);
+    padding-top: 32px;
+}
+
+#home-nav a:hover {
+    color: black;
+    text-shadow: 1px rgba(75, 73, 73, 0.79)
+}
+
+#home-nav {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 20px;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 40px;
+}
