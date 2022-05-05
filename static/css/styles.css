@@ -122,6 +122,7 @@ label, input {
 }
 
 #home-nav {
+    margin-top: 2rem;
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
@@ -160,8 +161,9 @@ label, input {
 }
 
 .home-tag {
-    font-size: 31px;
-    text-shadow: 1px 1px 1px rgba(75, 73, 73, 0.79);
+    font-size: 35px;
+    color:  #4675C0;
+    font-weight: bold;
 }
 
 #home-newemp-depsearch {
