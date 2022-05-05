@@ -1,0 +1,36 @@
+*{
+    font-family: monospace;
+}
+.name{
+    color: #4675C0;
+    font-size: 25px;
+}
+.home{
+    font-size: larger;
+}
+
+a, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style-type: none;
+}
+
+a:hover{
+    color: #4675C0;
+}
+
+h3{
+    font-size: large;
+}
+
+.main_container{
+    display: flex;
+
+}
+.nav_bar{
+    flex: 1;
+    margin-left: 10rem;
+    margin-top: 5rem;
+}
