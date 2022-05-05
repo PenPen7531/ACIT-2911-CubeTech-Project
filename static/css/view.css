@@ -1,0 +1,67 @@
+*{
+    font-family: monospace;
+}
+.name{
+    color: #4675C0;
+    font-size: 25px;
+    /* border: #4675C0 solid 2px; */
+}
+.emp_id{
+    font-size: 25px;
+    font-weight: bold;
+}
+.home{
+    font-size: 20px;
+    padding-top: 3.5rem;
+    margin-left: 3rem;
+
+}
+.main{
+    display: flex;
+    
+}
+a, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style-type: none;
+}
+
+a:hover{
+    color: #4675C0;
+}
+
+h3{
+    font-size: large;
+}
+
+.main_container{
+    display: flex;
+    margin-right: 10rem;
+
+}
+
+.nav_bar{
+    flex: 1;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 1rem;
+    /* padding-top: 5rem; */
+    /* margin-right: 3rem; */
+
+
+}
+.emp_info{
+    flex: 1;
+    padding-left: 2rem;
+    font-size: 18px;
+}
+p{
+    background-color: #d4e1f6;
+}
+
+/* .nav_bar > a {
+    background-color: #d6dae3;
+
+} */
