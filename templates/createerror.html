@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <nav id="home-nav">
+        <h3 class="home-tag">EmpNet</h3>
+        <h3><a href="/confirm">Delete Database</a></h3>
+        <h3><a href="/logout">Logout</a></h3>
+    </nav>
     <h1>Error</h1>
     <p>Uh oh seems like this username is already registered to a database or this database name is already being used.</p>
     <a href="/">Sign In</a>
