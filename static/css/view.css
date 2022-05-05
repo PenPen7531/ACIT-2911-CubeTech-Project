@@ -4,11 +4,22 @@
 .name{
     color: #4675C0;
     font-size: 25px;
+    /* border: #4675C0 solid 2px; */
+
+}
+.emp_id{
+    font-size: 20px;
 }
 .home{
-    font-size: larger;
-}
+    font-size: 20px;
+    padding-top: 3.5rem;
+    margin-left: 3rem;
 
+}
+.main{
+    display: flex;
+    
+}
 a, a:hover{
     text-decoration: none;
     color: inherit;
@@ -27,10 +38,28 @@ h3{
 
 .main_container{
     display: flex;
+    margin-right: 10rem;
 
 }
+
 .nav_bar{
     flex: 1;
-    margin-left: 10rem;
-    margin-top: 5rem;
+    text-align: center;
+    margin-top: 1rem;
+    /* padding-top: 5rem; */
+    /* margin-right: 3rem; */
+
+
 }
+.emp_info{
+    flex: 1;
+    padding-left: 2rem;
+}
+p{
+    background-color: #d6dae3;
+}
+
+/* .nav_bar > a {
+    background-color: #d6dae3;
+
+} */
