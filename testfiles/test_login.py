@@ -1,6 +1,10 @@
 #import pytest
-import login
+#import login
 import os
+
+# TESTING
+
+i = 0
 
 #def test__init__(): # Don't know how to test this function
 
