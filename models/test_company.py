@@ -1,5 +1,5 @@
 import pytest
-from models.company import Company
+from company import Company
 
 def test__init__():
     with pytest.raises(TypeError):
