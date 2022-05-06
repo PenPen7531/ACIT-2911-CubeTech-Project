@@ -4,8 +4,6 @@ import os
 
 # TESTING
 
-i = 0
-
 #def test__init__(): # Don't know how to test this function
 
 # def test_find_login_by_username():
