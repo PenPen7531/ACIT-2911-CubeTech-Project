@@ -3,7 +3,7 @@
 # pytest --cov
 
 import pytest
-from models.admin import Admin
+from admin import Admin
 
 
 def test__init__success():
