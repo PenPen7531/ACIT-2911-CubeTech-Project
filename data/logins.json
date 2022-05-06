@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-[{"username": "admin", "password": "P@ssw0rd", "database": "bcit"}, {"username": "sap", "password": "sappassword", "database": "sap"}, {"username": "jeff", "password": "wang", "database": "microsoft"}, {"username": "michelle", "password": "michelle", "database": "Coffe"}, {"username": "jwang", "password": "testpassword", "database": "jeffdb"}, {"username": "admin1", "password": "P@ssw0rd", "database": "test"}, {"username": "abc", "password": "abc", "database": "abc"}, {"username": "hello", "password": "hello", "database": "hello"}]
-=======
 [
     { "username": "admin", "password": "P@ssw0rd", "database": "bcit" },
     { "username": "sap", "password": "sappassword", "database": "sap" },
@@ -12,4 +9,3 @@
     { "username": "hello", "password": "hello", "database": "hello" },
     { "username": "popper", "password": "popper", "database": "popper" }
   ]
->>>>>>> 29caf468ab89225fc57019c5c488ea4a59819f8e
