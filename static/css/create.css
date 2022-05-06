@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    box-sizing: border-box;
+    font-family: monospace;
+  }
+
+  h1 {
+      font-size: 32px;
+      color: #4675C0;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+  }
+
+  table, th, td {
+    border: 1px solid;
+    padding: 30px;
+    text-align: center;
+}   
+
+table {
+    border-collapse: collapse;
+    top: 0;
+    width: 100%;
+}
+
+th, td {
+    padding: 5px;
+    font-size: 16px;
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+#employee-table {
+    margin-top: 25px;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+#table-container {
+    height: 500px;
+    overflow: auto;
+}
+
+#create-emp {
+    color: #31748f;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#create-emp:hover {
+    text-decoration: underline;
+}
+
+tr a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #0d6efd;
+}
+
+tr a:hover {
+    text-decoration: underline;
+}
+
+label {
+    font-family: monospace ;
+    font-weight: bold;
+}
+
+.flex-mid {
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1-head {
+    font-size: 7em;
+}
+
+label, input {
+    font-size: 2em;
+}
+
+.input-right {
+    font-size: 1.75em;
+}
+
+.login-a {
+    font-size: .875em;
+    text-decoration: none;
+}
+
+.login-btns {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#post-form {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+}
+
+#create-admin-input {
+    display: flex;
+    flex-direction: column;
+}
+
+#home-nav {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 20px;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 40px;
+}
+
+.home-content {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#home-nav .home-tag {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+#home-nav a {
+    font-family: arial,sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(83, 80, 80);
+}
+
+#home-nav a:hover {
+    color: black;
+    text-shadow: 1px rgba(75, 73, 73, 0.79)
+}
+
+.home-tag {
+    font-size: 35px;
+    color:  #4675C0;
+    font-weight: bold;
+}
+
+#home-newemp-depsearch {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+#home-newemp-depsearch a {
+    text-decoration: none;
+}
+
+#dep-search {
+    width: 210px;
+    height: 27px;
+}
+
+.search-icon {
+    background-color: transparent;
+    border: none;
+}
+
+#search-label {
+    font-family: arial,sans-serif;
+    color: #4675C0;
+}
+
+.employee-add {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+    color: #4675C0;
+    background-color: ;
+}
+
+.emp-id-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.department-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.salary-age-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first-name-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.last-name-input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.salary-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.age-input {
+    display: flex;
+    flex-direction: column;
+}
