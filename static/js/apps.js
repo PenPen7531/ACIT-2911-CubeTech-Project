@@ -52,3 +52,19 @@ function sortTable(n) {
 }
 
 /* Source: https://www.w3schools.com/howto/howto_js_sort_table.asp */
+
+//Delete Confirm
+
+// const row = document.querySelectorAll("tr")
+// row.forEach(element => element.addEventListener('click', getEmpId))
+
+// function getEmpId(ev) {
+//    let tr = ev.target.parentNode.parentNode
+//    let ids = tr.getElementsByTagName("td")[0].innerHTML
+//    console.log(ids)
+
+// }
+
+function deleteConfirm(){
+    return confirm(`Are you sure you want to delete Employee`)
+}
