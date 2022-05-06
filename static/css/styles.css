@@ -200,3 +200,9 @@ label, input {
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
     background-color: #d4e1f6;
  }
+
+#clear-filter {
+    color: rgba(255, 0, 0, 0.523);
+    font-size: 18px;
+    text-decoration: none;
+}

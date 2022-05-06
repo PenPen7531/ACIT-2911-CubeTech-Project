@@ -13,41 +13,44 @@
 
 
 </head>
-    <body>
-        <table id="table-data" class="table table-striped">
-            <div class="main_heading">
-            <h1>{{ department.employee_department }} Database</h1>
-            </div>
-            <h3><a href="/create">Create New Employee</a></h3>
-            <h3><a href="/view">Clear Filters</a></h3>
-            <div class="home-content">
-                <div id="home-newemp-depsearch">
-                    <form method = "POST">
-                        <label id='search-label' for = "department">Department Search</label>
-                        <div>
-                            <input id ='dep-search' type="text" name = "department" id ="post_input"/>
-                            <button class="search-icon"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-            <!-- <label for="departments">Filter by Department </label>
-            <select name="departments" id="departments">
-                <option value="marketing">Marketing</option>
-                <option value="finance">Finance</option>
-                <option value="human_resources">Human Resources</option>
-                <option value="it">IT</option>
-                <option value="operations">Operations</option>
-            </select> -->
-            <thead>
-                <th onclick="sortTable(0)">Employee ID</th>
-                <th onclick="sortTable(1)">Employee First Name</th>
-                <th onclick="sortTable(2)">Employee Last Name</th>
-                <th onclick="sortTable(3)">Employee Department</th>
-                <th onclick="sortTable(4)">Employee Salary</th>
-                <th onclick="sortTable(5)">Employee Age</th>
-                <th colspan="2">Methods</th>
-            </thead>
+<body>
+    <nav id="home-nav">
+        <h2 class="home-tag">EmpNet</h2>
+        <h3><a href="/logout">Logout</a></h3>
+    </nav>
+    <div class="main-heading">
+        <h1>{{ department.employee_department }} Database</h1>
+    </div>
+    <div class="home-content">
+        <div id="home-newemp-depsearch">
+            <form method = "POST">
+                <label id='search-label' for = "department">Department Search</label>
+                <input id ='dep-search' type="text" name = "department" id ="post_input"/>
+                <button class="search-icon"><i class="fa fa-search"></i></button>
+            </form>
+            <a id="clear-filter" href="/view"><button type="button" class="btn btn-danger">Clear Filters</button></a>
+            <a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a>
+        </div>
+        <!-- <label for="departments">Filter by Department </label>
+        <select name="departments" id="departments">
+            <option value="marketing">Marketing</option>
+            <option value="finance">Finance</option>
+            <option value="human_resources">Human Resources</option>
+            <option value="it">IT</option>
+            <option value="operations">Operations</option>
+        </select> -->
+    <table id="table-data" class="table table-striped">
+        <thead>
+            <th onclick="sortTable(0)">Employee ID</th>
+            <th onclick="sortTable(1)">Employee First Name</th>
+            <th onclick="sortTable(2)">Employee Last Name</th>
+            <th onclick="sortTable(3)">Employee Department</th>
+            <th onclick="sortTable(4)">Employee Salary</th>
+            <th onclick="sortTable(5)">Employee Age</th>
+            <th colspan="2">Methods</th>
+        </thead>
         <tbody>
-            {% for employee in department %} 
+        {% for employee in department %} 
             <tr>
                 <td>{{ employee.employee_id }}</td>
                 <td>{{ employee.first_name }}</td>
@@ -61,7 +64,5 @@
             {% endfor %}
         </tbody>
     </table>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    </body>
+</body>
 </html>
