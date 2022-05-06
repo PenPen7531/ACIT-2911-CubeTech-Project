@@ -23,6 +23,8 @@ def test_init_failure():
 
     with pytest.raises(TypeError):
         Admin('admin', 'root', 5)
+    with pytest.raises(ValueError):
+        Admin("", "root", 'root_database')
 
 def test_to_dict():
     test_dict = {
