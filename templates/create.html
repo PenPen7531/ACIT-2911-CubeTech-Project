@@ -16,42 +16,44 @@
     </nav>
     <div class='employee-add'>
         <form method = "POST">
-            <div class="emp-id-input">
+            <div class="field-on-top">
                 <label for = "employee_id">Employee ID:</label>
                 <input type="text" name = "employee_id" id ="post_input" required />
             </div>
             <br>
             <div class="name-input">
-                <div class="first-name-input">
+                <div class="field-on-top">
                     <label for = "first_name">First Name:</label>
                     <input type="text" name = "first_name" id ="post_input" required />
                 </div>
-                <div class="last-name-input">
+                <div class="field-on-top">
                     <label for = "last_name">Last Name:</label>
                     <input type="text" name = "last_name" id ="post_input" required />
                 </div>
             </div>
             <br>
-            <div class="department-input">
+            <div class="field-on-top">
                 <label for = "employee_department">Department:</label>
                 <input type="text" name = "employee_department" id ="post_input" required />
             </div>
             <br>
             <div class="salary-age-input">
-                <div class="salary-input">
+                <div class="field-on-top">
                     <label for = "employee_salary">Salary:</label>
                     <input type="number" min="0" name = "employee_salary" id ="post_input" required />
                 </div>
                 <br>
-                <div class="age-input">
+                <div class="field-on-top">
                     <label for = "employee_age">Age:</label>
                     <input type="number" min="0" max="100" name = "employee_age" id ="post_input" required />
                 </div>
             </div>  
             <br>
 
-            <input type = "submit" value = "Submit Data"/>
-            <a href="/view">Cancel</a>
+            <div class="button">
+                <a class='btn btn-danger'href="/view">Cancel</a>
+                <input type = "submit" value = "Submit Data" class="btn btn-primary"/>
+            </div>
         </form>
     </div>
 </body>
