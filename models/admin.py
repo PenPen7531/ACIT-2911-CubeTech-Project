@@ -1,3 +1,4 @@
+from typing import Type
 from unittest.util import strclass
 
 
@@ -8,6 +9,8 @@ class Admin:
         if len(admin_username) < 1:
             raise ValueError
         self.username = admin_username
+        if type(admin_password) != str:
+            raise TypeError
         self.password = admin_password
         if type(admin_database) != str:
             raise TypeError
