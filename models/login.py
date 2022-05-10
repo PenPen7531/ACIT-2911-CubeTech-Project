@@ -31,9 +31,7 @@ class Login:
 
     def login_authenticate(self, username, password):
         enc_password=Crypto.enc_pass(password)
-        print(enc_password)
         for login in self.login:
-            print(login.password)
             if login.username==username and login.password==enc_password:
                 return True
         return False 

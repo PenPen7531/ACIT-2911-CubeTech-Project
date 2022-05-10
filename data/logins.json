@@ -1,13 +1,1 @@
-[
-  {
-    "username": "admin",
-    "password": "806411511511948114100",
-    "database": "bcit"
-  },
-  {
-    "username": "sap",
-    "password": "1159711211297115115119111114100",
-    "database": "sap"
-  },
-  { "username": "jeff", "password": "106101102102", "database": "microsoft" }
-]
+[{"username": "admin", "password": "384.6307.8552.6552.6571.8231.0547.8480.6", "database": "bcit"}, {"username": "sap", "password": "552.6466.2538.2538.2466.2552.6552.6571.8533.4547.8480.6", "database": "sap"}, {"username": "jeff", "password": "509.4485.4490.2490.2", "database": "microsoft"}]

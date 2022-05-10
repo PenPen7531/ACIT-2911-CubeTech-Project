@@ -3,5 +3,5 @@ class Crypto:
         enc_pass=""
         password.split()
         for letters in password:
-            enc_pass+=str(ord(letters))
+            enc_pass+=str(((ord(letters)*24)^3)/5)
         return enc_pass
