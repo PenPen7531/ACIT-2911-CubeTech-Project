@@ -206,3 +206,51 @@ label, input {
     font-size: 18px;
     text-decoration: none;
 }
+
+.errors h1,p{
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+}
+
+.signup-btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.signup-btns a {
+    text-decoration: none;
+}
+
+.signup-btns button {
+    width: 175px;
+}
+
+#sad-face {
+    font-size: 6rem;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
+    .home-content {
+        flex-direction: column;
+        overflow-x: auto;
+    }
+
+    #home-nav h3 {
+        align-self: flex-end;
+    }
+
+    #home-newemp-depsearch{
+        position: absolute;
+    }
+
+    #table-data {
+        margin-top: 113px
+    }
+}

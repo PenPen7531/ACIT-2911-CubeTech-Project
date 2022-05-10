@@ -1,6 +1,7 @@
 import json
 from models.admin import Admin
 import os
+from models.crypto import Crypto
 class Login:
     def __init__(self):
         file = open("data/logins.json")
@@ -10,7 +11,7 @@ class Login:
             admin_username = login.get("username")
             admin_password = login.get("password")
             admin_database = login.get("database")
-            admin_id = login.get("id")
+
             admin_obj=Admin(admin_username, admin_password, admin_database)
             self.login.append(admin_obj)
 
@@ -29,8 +30,9 @@ class Login:
         file.write(json.dumps(login_list))
 
     def login_authenticate(self, username, password):
+        enc_password=Crypto.enc_pass(password)
         for login in self.login:
-            if login.username==username and login.password==password:
+            if login.username==username and login.password==enc_password:
                 return True
         return False 
 
