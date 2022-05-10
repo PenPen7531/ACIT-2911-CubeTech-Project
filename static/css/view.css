@@ -12,6 +12,10 @@
     padding-bottom: 40px;
 }
 
+.center {
+    padding-top: 6px;
+}
+
 .head {
     font-size: 35px;
     color:  #4675C0;
