@@ -1,4 +1,13 @@
 [
-  { "username": "admin", "password": "P@ssw0rd", "database": "bcit" },
-  { "username": "sap", "password": "sappassword", "database": "sap" }
+  {
+    "username": "admin",
+    "password": "806411511511948114100",
+    "database": "bcit"
+  },
+  {
+    "username": "sap",
+    "password": "1159711211297115115119111114100",
+    "database": "sap"
+  },
+  { "username": "jeff", "password": "106101102102", "database": "microsoft" }
 ]
