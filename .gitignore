@@ -1,3 +1,4 @@
 models/_pycache_
 my_env/
 testfiles/__pycache__
+.coverage
