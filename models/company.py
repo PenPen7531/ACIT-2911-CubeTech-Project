@@ -1,6 +1,6 @@
 import json
 # from models.employee import Employee  # run this line when running the webapp
-from models.employee import Employee
+from employee import Employee
 
 
 class Company():
@@ -23,7 +23,7 @@ class Company():
                     ) for employee in json.load(file)
                 ]
         except:
-            self.employees=[]
+            self.employees = []
 
     def add(self, employee):
         if type(employee) is not Employee:
@@ -53,6 +53,7 @@ class Company():
         with open(f"data/{self.name}.json", "w") as file:
             json.dump([employee.to_dict()
                        for employee in self.employees], file)
+
     def salary_sum(self):
         pass
 
