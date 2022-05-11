@@ -1,5 +1,6 @@
 import json
-from models.employee import Employee
+# from models.employee import Employee  # run this line when running the webapp
+from employee import Employee
 
 
 class Company():
@@ -8,49 +9,44 @@ class Company():
             raise TypeError
         self.name = name
         self.employees = []
-        try:
-            file = open(f"data/{self.name}.json")
-            employees = json.load(file)
-            for employee in employees:
-                employee_first_name = employee.get("first_name")
-                employee_last_name = employee.get("last_name")
-                employee_id = employee.get("employee_id")
-                employee_department = employee.get("employee_department")
-                employee_salary = employee.get("employee_salary")
-                employee_age = employee.get("employee_age")
-                employee_obj = Employee(employee_first_name, employee_last_name,
-                                        employee_id, employee_department, employee_salary, employee_age)
-                self.employees.append(employee_obj)
-        except:
-            self.employees=[]
+        with open(f"data/{self.name}.json") as file:
+            self.employees = [
+                Employee(
+                    employee["first_name"],
+                    employee["last_name"],
+                    employee["employee_id"],
+                    employee["employee_department"],
+                    employee["employee_salary"],
+                    employee["employee_age"],
 
-    def save(self):
-        employee_list = []
-        for employee in self.employees:
-            emp_dict = employee.to_dict()
-            employee_list.append(emp_dict)
-        file = open(f"data/{self.name}.json", "w")
-        file.write(json.dumps(employee_list))
-
-    def delete(self, emp_id):
-        for i, employee in enumerate(self.employees):
-            if employee.employee_id == emp_id:
-                self.employees.pop(i)
-                return True
-        return False
+                ) for employee in json.load(file)
+            ]
 
     def add(self, employee):
-        if isinstance(employee, Employee):
-            self.employees.append(employee)
+        if type(employee) is not Employee:
+            raise TypeError
+        self.employees.append(employee)
 
-    def find_employee_by_id(self, emp_id):
+    def find_employee_by_id(self, employee_id):
         for employee in self.employees:
-            if employee.employee_id == emp_id:
+            if employee.employee_id == employee_id:
                 return employee
 
-    def find_employees_by_department(self, department):
-        employee_in_dept=[]
+    def find_employees_by_department(self, employee_department):
+        employee_in_dept = []
         for employee in self.employees:
-            if employee.employee_department==department:
+            if employee.employee_department == employee_department:
                 employee_in_dept.append(employee)
         return employee_in_dept
+
+    def delete(self, employee_id):
+        employee = self.find_employee_by_id(employee_id)
+        if employee:
+            self.employees.remove(employee)
+            return True
+        return False
+
+    def save(self):
+        with open(f"data/{self.name}.json", "w") as file:
+            json.dump([employee.to_dict()
+                       for employee in self.employees], file)
