@@ -182,16 +182,10 @@ def create_admin():
         admin_username = request.form.get("username")
         admin_password = request.form.get("password")
         admin_database = request.form.get("database_name")
-<<<<<<< HEAD
-        new_admin = Admin(admin_username, admin_password, admin_database)
+        enc_password = Crypto.enc_pass(admin_password)
+        new_admin = Admin(admin_username, enc_password, admin_database)
         users = Login()
         new_user = users.find_login_by_username(admin_username)
-=======
-        enc_password=Crypto.enc_pass(admin_password)
-        new_admin = Admin(admin_username, enc_password, admin_database)
-        users=Login()
-        new_user=users.find_login_by_username(admin_username)
->>>>>>> e279113da8e39dd4e9c57b795850e0148d8f2e71
         if new_user != None:
             return render_template("createerror.html")
         check_database_name = users.check_database_name(admin_database)
