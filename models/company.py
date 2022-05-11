@@ -1,6 +1,6 @@
 import json
 # from models.employee import Employee  # run this line when running the webapp
-from employee import Employee
+from models.employee import Employee
 
 
 class Company():
@@ -9,18 +9,21 @@ class Company():
             raise TypeError
         self.name = name
         self.employees = []
-        with open(f"data/{self.name}.json") as file:
-            self.employees = [
-                Employee(
-                    employee["first_name"],
-                    employee["last_name"],
-                    employee["employee_id"],
-                    employee["employee_department"],
-                    employee["employee_salary"],
-                    employee["employee_age"],
+        try:
+            with open(f"data/{self.name}.json") as file:
+                self.employees = [
+                    Employee(
+                        employee["first_name"],
+                        employee["last_name"],
+                        employee["employee_id"],
+                        employee["employee_department"],
+                        employee["employee_salary"],
+                        employee["employee_age"],
 
-                ) for employee in json.load(file)
-            ]
+                    ) for employee in json.load(file)
+                ]
+        except:
+            self.employees=[]
 
     def add(self, employee):
         if type(employee) is not Employee:
