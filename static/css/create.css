@@ -229,6 +229,11 @@ label, input {
 
 
 
-
+@media screen and (max-width: 600px) {
+    .employee-add label {
+        font-size: 18px;
+        padding-top: 2px;
+    }
+}
 
 

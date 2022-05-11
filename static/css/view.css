@@ -18,6 +18,7 @@
 }
 .main{
     display: flex;
+    flex-direction: row;
     
 }
 a, a:hover{
@@ -49,9 +50,8 @@ h3{
     margin-top: 1rem;
     /* padding-top: 5rem; */
     /* margin-right: 3rem; */
-
-
 }
+
 .emp_info{
     flex: 1;
     padding-left: 2rem;
@@ -110,4 +110,36 @@ h3{
     text-align: right;
     padding-right: 15px;
     padding-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .emp_id {
+        padding-left: 20px;
+        font-size: 22px;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .main_container {
+        margin-right: 0;
+        flex-direction: column;
+    }
+
+    .home {
+        padding-left: 130px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+    
+    .nav_bar {
+        display: flex;
+        flex-direction: row;
+        padding-left: 25px;
+        text-align: left;
+        gap: 20px;
+    }
 }
