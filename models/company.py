@@ -50,3 +50,8 @@ class Company():
         with open(f"data/{self.name}.json", "w") as file:
             json.dump([employee.to_dict()
                        for employee in self.employees], file)
+    def salary_sum(self):
+        pass
+
+    def employee_count(self):
+        pass
