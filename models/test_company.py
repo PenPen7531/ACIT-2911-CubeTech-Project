@@ -99,24 +99,24 @@ def test_save(mock_file, bcit):
     mock_file.assert_called_once_with("data/bcit.json", "w")
 
 
-JSON_STR_SALARY = """[
-    {
-       "first_name" : "Abeeha",
-       "last_name": "Faisal",
-       "employee_id" : "hiu38r031",
-       "employee_department":"Human Resources",
-       "employee_salary": '50000',
-       "employee_age": 25
-    }
-]"""
+# JSON_STR_SALARY = """[
+#     {
+#        "first_name" : "Abeeha",
+#        "last_name": "Faisal",
+#        "employee_id" : "hiu38r031",
+#        "employee_department":"Human Resources",
+#        "employee_salary": '50000',
+#        "employee_age": 25
+#     }
+# ]"""
 
 def test_salary_sum_success(bcit):
     assert bcit.salary_sum() == 205000
 
-@pytest.fixture
-@patch("builtins.open", new_callable=mock_open, read_data=JSON_STR_SALARY)
-def bcit_fail(mock_file1):
-    return Company("bcit_fail")
+# @pytest.fixture
+# @patch("builtins.open", new_callable=mock_open, read_data=JSON_STR_SALARY)
+# def bcit_fail(mock_file1):
+#     return Company("bcit_fail")
 
 # @patch("builtins.open", new_callable=mock_open, read_data="[]")
 # def test_open1(mock_file1):
@@ -125,17 +125,11 @@ def bcit_fail(mock_file1):
 #     assert "data/bcit_fail.json" in mock_file1.call_args[0]
 
 
-
-
 def test_salary_sum_failure(bcit_fail):
-    # assert len(bcit_fail) == 1
-    print(1)
+    with pytest.raises(TypeError):
+        bcit_fail.salary_sum
 
-
-
-
-
-# def test_employee_count(bcit):
-#     assert bcit.employee_count() == 3
+def test_employee_count(bcit):
+    assert bcit.employee_count() == 3
 
 
