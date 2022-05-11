@@ -1,71 +1,99 @@
+import pytest
 from unittest.mock import mock_open, patch
-import pytest 
-
-from employee import Employee
 from company import Company
+from employee import Employee
 
-JSON_TEST_FILE = """[
+JSON_FILE = """[
     {
-        "first_name": "Hickman ",
-        "last_name": "Mcmahon",
-        "employee_id": "62702df9256cac249abe4d37",
-        "employee_department": "Accounting",
-        "employee_salary": 71623,
-        "employee_age": 32,
-        "employee_email": "hickmanmcmahon@silodyne.com",
-        "employee_phone": " +1 (938) 494-3013",
-        "employee_address": "631 Hendrickson Place, Marenisco, Nebraska, 8566",
-        "employee_gender": "male",
-        "date_hired": "Tue Dec 16 2014 12:36:58 GMT-0800 (Pacific Standard Time)"
+       "first_name" : "Abeeha",
+       "last_name": "Faisal",
+       "employee_id" : "hiu38r031",
+       "employee_department":"Human Resources",
+       "employee_salary": 50000,
+       "employee_age": 25
     },
-
-    {
-    "first_name": "Taylor ",
-    "last_name": "Bennett",
-    "employee_id": "62702df918e32f099cf2da99",
-    "employee_department": "Accounting",
-    "employee_salary": 114135,
-    "employee_age": 25,
-    "employee_email": "taylorbennett@silodyne.com",
-    "employee_phone": " +1 (834) 527-2073",
-    "employee_address": "456 Melba Court, Dotsero, American Samoa, 8536",
-    "employee_gender": "male",
-    "date_hired": "Mon Nov 16 2015 07:35:15 GMT-0800 (Pacific Standard Time)"
+        {
+       "first_name" : "Jerry",
+       "last_name": "Seinfeld",
+       "employee_id" : "9875bgek",
+       "employee_department":"Finance",
+       "employee_salary": 65000,
+       "employee_age": 56
     },
-
-    {
-    "first_name": "Howard ",
-    "last_name": "Nolan",
-    "employee_id": "62702df9452db7d9a4714606",
-    "employee_department": "Accounting",
-    "employee_salary": 118826,
-    "employee_age": 28,
-    "employee_email": "howardnolan@silodyne.com",
-    "employee_phone": " +1 (976) 584-2782",
-    "employee_address": "631 Livingston Street, Bainbridge, New York, 5664",
-    "employee_gender": "male",
-    "date_hired": "Fri Oct 28 2016 03:52:02 GMT-0700 (Pacific Daylight Time)"
-  }
+        {
+       "first_name" : "Hamna",
+       "last_name": "Ammar",
+       "employee_id" : "325tgwgda",
+       "employee_department":"Accounting",
+       "employee_salary": 90000,
+       "employee_age": 34
+    }
 ]"""
 
+
 @pytest.fixture
-@patch("builtins.open", new_callable=mock_open, read_data="[]")
-def apple_test(mock_file):
-    return Company("Apple")
+@patch("builtins.open", new_callable=mock_open, read_data=JSON_FILE)
+def bcit(mock_file):
+    return Company("bcit")
+
 
 @patch("builtins.open", new_callable=mock_open, read_data="[]")
 def test_open(mock_file):
-    apple = Company("Apple")
+    bcit = Company(name="bcit")
     mock_file.assert_called_once()
-    assert "data/company.json" in mock_file.call_args[0] # fix file name
+    assert "data/bcit.json" in mock_file.call_args[0]
 
 
-def test_attributes_company(apple):
-    assert apple.name == "Apple"
-    for employee in apple.employees:
+def test_invalid_name():
+    with pytest.raises(TypeError):
+        assert Company(name=22)
+
+
+def test_attribute_company(bcit):
+    assert bcit.name == "bcit"
+    for employee in bcit.employees:
         assert type(employee) is Employee
-    assert len(apple) == 3
+    assert len(bcit.employees) == 3
 
-def test_save(apple):
-    pass
 
+def test_find_employee_by_id(bcit):
+    mike = bcit.find_employee_by_id("hiu38r031")
+    assert type(mike) is Employee
+    assert mike.employee_id == "hiu38r031"
+
+
+def test_find_employees_by_department(bcit):
+    emps = bcit.find_employees_by_department("Finance")
+    assert len(emps) == 1
+    for employee in emps:
+        assert employee.employee_department == "Finance"
+
+
+def test_add_employee(bcit):
+    john = Employee(first_name="John", last_name="Watts", employee_id="sdhhhh244",
+                    employee_department="IT", employee_salary=90234, employee_age=36)
+    bcit.add(john)
+    assert john in bcit.employees
+
+
+def test_add_invalid(bcit):
+    with pytest.raises(TypeError):
+        john = None
+        bcit.add(john)
+
+
+def test_delete_employee(bcit):
+    remove_emp = bcit.delete("hiu38r031")
+    assert remove_emp is True
+
+    for employee in bcit.employees:
+        assert employee.employee_id != "hiu38r031"
+
+    remove_emp = bcit.delete("hiu38r031")
+    assert remove_emp is False
+
+
+@patch("builtins.open", new_callable=mock_open)
+def test_save(mock_file, bcit):
+    bcit.save()
+    mock_file.assert_called_once_with("data/bcit.json", "w")
