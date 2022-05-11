@@ -9,19 +9,20 @@ from unittest.mock import mock_open, patch
 JSON_FILE = """[
   {
     "username": "admin",
-    "password": "384.6307.8552.6552.6571.8231.0547.8480.6",
+    "password": "b03ddf3ca2e714a6548e7495e2a03f5e824eaac9837cd7f159c67b90fb4b7342",
     "database": "bcit"
   },
   {
     "username": "sap",
-    "password": "552.6466.2538.2538.2466.2552.6552.6571.8533.4547.8480.6",
+    "password": "8a3dff779c20f435fbe76de5ecabec0d64313f2105f8681fc49315dfe87a37db",
     "database": "sap"
   },
   {
     "username": "jeff",
-    "password": "509.4485.4490.2490.2",
+    "password": "2e0b8d61fa2a6959d254b6ff5d0fb512249329097336a35568089933b49abdde",
     "database": "microsoft"
   }
+
 ]"""
 
 
