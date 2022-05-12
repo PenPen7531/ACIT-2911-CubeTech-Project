@@ -55,11 +55,11 @@ class Company():
                        for employee in self.employees], file)
 
     def salary_sum(self):
-        total=0
+        total = 0
         for employees in self.employees:
             if type(employees.employee_salary) != int:
                 raise TypeError
-            total+=employees.employee_salary
+            total += employees.employee_salary
         return total
 
     def employee_count(self):
