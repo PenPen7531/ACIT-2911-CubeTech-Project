@@ -1,6 +1,6 @@
 import json
 from models.employee import Employee  # run this line when running the webapp
-# from employee import Employee
+#from employee import Employee
 
 
 class Company():
@@ -55,7 +55,12 @@ class Company():
                        for employee in self.employees], file)
 
     def salary_sum(self):
-        pass
+        total = 0
+        for employees in self.employees:
+            if type(employees.employee_salary) != int:
+                raise TypeError
+            total += employees.employee_salary
+        return total
 
     def employee_count(self):
-        pass
+        return len(self.employees)

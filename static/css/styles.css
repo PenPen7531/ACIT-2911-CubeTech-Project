@@ -119,6 +119,11 @@ label, input {
 #create-admin-input {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+#post-form a {
+    text-decoration: none;
 }
 
 #home-nav {
