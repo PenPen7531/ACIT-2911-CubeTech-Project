@@ -59,27 +59,11 @@ h3{
 }
 
 .nav_bar{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
+    display: flex;  
     flex-direction: row;
-    padding-right: 115rem;
-    padding-top: 1rem;
-    flex: 1;
+    padding-left: 5px;
     font-size: 18px;
-    /* text-align: center; */
-    margin-top: 1rem;
-    /* padding-top: 5rem;
-    margin-right: 3rem; */
-    padding-left: 120px;
-    gap: 0.5rem;
-    width: 50px;
-}
-
-.nav_bar button {
-    display: flex;
-    height: 40px;
-    text-align: center;
+    gap: 10px;
 }
 
 .emp_info{
@@ -119,11 +103,15 @@ h3{
 }
 
 #home-nav a {
-    font-family: arial,sans-serif;
     font-size: 16px;
     text-decoration: none;
+<<<<<<< HEAD
     color: rgb(83, 80, 80);
     background-color: none;
+=======
+    /*color: rgb(83, 80, 80);*/
+    color: white; 
+>>>>>>> e38abbbcd2e934cbdfe16ea6ca22a83df8df13f2
 }
 
 #home-nav a:hover {
