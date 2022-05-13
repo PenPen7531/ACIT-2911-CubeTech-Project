@@ -34,6 +34,9 @@
                 </form>
                 <a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a>
             </div>
+            <div class="popup" onclick="myFunction()"> Show Salary Sum
+                <span class="popuptext" id="myPopup">$ {{ company.salary_sum() }}</span>
+            </div>
                 <!-- <label for="departments">Filter by Department </label>
                 <select name="departments" id="departments">
                     <option value="marketing">Marketing</option>
@@ -69,5 +72,13 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- script to display the pop up message -->
+        <script>
+            function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+        </script>
     </body>
 </html>
