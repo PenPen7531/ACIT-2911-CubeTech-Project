@@ -121,6 +121,11 @@ label, input {
     flex-direction: column;
     gap: 20px;
 }
+#flex-mid > h1 {
+    background-color: #2e902c;
+    padding-right: 5rem;
+    margin-bottom: 5rem;
+}
 
 #post-form a {
     text-decoration: none;
