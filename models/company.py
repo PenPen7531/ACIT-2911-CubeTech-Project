@@ -1,12 +1,6 @@
 import json
-<<<<<<< HEAD
-from typing import Type
-# from models.employee import Employee  # run this line when running the webapp
-from employee import Employee
-=======
 from models.employee import Employee  # run this line when running the webapp
 #from employee import Employee
->>>>>>> 437982940723d240399bc546fbb63a802ebe9360
 
 
 class Company():
