@@ -1,7 +1,12 @@
 import json
+<<<<<<< HEAD
 from typing import Type
 # from models.employee import Employee  # run this line when running the webapp
 from employee import Employee
+=======
+from models.employee import Employee  # run this line when running the webapp
+#from employee import Employee
+>>>>>>> 437982940723d240399bc546fbb63a802ebe9360
 
 
 class Company():
@@ -56,7 +61,7 @@ class Company():
                        for employee in self.employees], file)
 
     def salary_sum(self):
-        total=0
+        total = 0
         for employees in self.employees:
             total+=employees.employee_salary
         return total

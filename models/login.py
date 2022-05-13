@@ -1,9 +1,16 @@
 import json
-# from models.admin import Admin  # for running webapp
-from admin import Admin
+from models.admin import Admin  # for running webapp
+<<<<<<< HEAD
+# from admin import Admin
 import os
-# from models.crypto import Crypto # for running webapp
-from crypto import Crypto
+from models.crypto import Crypto  # for running webapp
+# from crypto import Crypto
+=======
+#from admin import Admin
+import os
+from models.crypto import Crypto # for running webapp
+#from crypto import Crypto
+>>>>>>> c98f7fd3d9d426a7e3ac82f7517a9fb2ec008ad3
 
 
 class Login:

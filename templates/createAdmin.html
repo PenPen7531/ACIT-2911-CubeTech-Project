@@ -18,15 +18,15 @@
         <br>
         <br>
         <form id='post-form' method = "POST">
-            <label for = "database_name"></label>
-            <input type="text" name = "database_name" id ="post_input" required placeholder="Database Name"/>
             <div id="create-admin-input">
+                <label for = "database_name"></label>
+                <input type="text" name = "database_name" id ="post_input" required placeholder="Database Name"/>
                 <label for = "username"></label>
                 <input type="text" name = "username" id ="post_input" required placeholder="Username" />
                 <label for = "password"></label>
                 <input type="text" name = "password" id ="post_input" required placeholder="Password" />
+                <input type = "submit" value = "Create Database" class="btn btn-outline-primary"/>
             </div>  
-            <input type = "submit" value = "Create Database" />
             <a href="/">Cancel</a>
         </form>
     </div>
