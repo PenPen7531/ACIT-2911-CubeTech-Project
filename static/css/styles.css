@@ -237,9 +237,6 @@ label, input {
     font-size: 6rem;
 }
 
-.emp_sum {
-    background-color: #4675C0;
-}
 .emp_sum > p {
     font-size: 20px;
     font-weight: bold;
