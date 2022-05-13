@@ -71,6 +71,15 @@ h3{
     margin-top: 1rem;
     /* padding-top: 5rem;
     margin-right: 3rem; */
+    padding-left: 120px;
+    gap: 0.5rem;
+    width: 50px;
+}
+
+.nav_bar button {
+    display: flex;
+    height: 40px;
+    text-align: center;
 }
 
 .emp_info{
@@ -114,7 +123,7 @@ h3{
     font-size: 16px;
     text-decoration: none;
     color: rgb(83, 80, 80);
-    padding-top: 32px;
+    background-color: none;
 }
 
 #home-nav a:hover {

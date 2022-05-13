@@ -249,16 +249,8 @@ label, input {
 
 /* Popup container - can be anything you want */
 .popup {
-    position: absolute;
+    width: 125px;
     cursor: pointer;
-    /* display: flex; */
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    margin-top: 12rem;
-    background-color: #0d6efd;
-    padding: 5px 16px 5px 10px ;
-    color: white;
   }
   
 /* The actual popup */
@@ -275,6 +267,15 @@ label, input {
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Popup arrow */
@@ -329,6 +330,6 @@ to {opacity:1 ;}
     }
 
     #table-data {
-        margin-top: 113px
+        margin-top: 200px
     }
 }

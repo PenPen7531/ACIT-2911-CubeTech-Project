@@ -33,9 +33,9 @@
                     <button class="search-icon"><i class="fa fa-search"></i></button>
                 </form>
                 <a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a>
-            </div>
-            <div class="popup" onclick="myFunction()"> Show Salary Total
-                <span class="popuptext" id="myPopup">$ {{ company.salary_sum() }}</span>
+                <div class="popup btn btn-primary" onclick="myFunction()"> Show Salary Total
+                    <span class="popuptext" id="myPopup">$ {{ company.salary_sum() }}</span>
+                </div>
             </div>
                 <!-- <label for="departments">Filter by Department </label>
                 <select name="departments" id="departments">
@@ -45,7 +45,7 @@
                     <option value="it">IT</option>
                     <option value="operations">Operations</option>
                 </select> -->
-            <table id="table-data" class="table table-striped">
+            <table id="table-data" class="table table-striped styled-table">
                 <thead class="thead-dark">
                     <th onclick="sortTable(0)">Employee ID</th>
                     <th onclick="sortTable(1)">Employee First Name</th>
