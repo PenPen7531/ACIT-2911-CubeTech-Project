@@ -61,5 +61,5 @@ class Company():
         return total
 
     def employee_count(self):
-        num_employee = len(self.employees)
-        return num_employee
+        num_emp = len(self.employees)
+        return num_emp
