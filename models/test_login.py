@@ -47,6 +47,7 @@ def test_find_login_by_username(bcit):
     admin = bcit.find_login_by_username("test")
     assert admin == None
 
+
 def test_add_login(bcit):
     hareem = Admin(admin_username="hareem",
                    admin_password="hareem", admin_database="test_hareem")
@@ -54,8 +55,9 @@ def test_add_login(bcit):
     bcit.save()
     assert hareem in bcit.login
 
+
 def test_delete_admin(bcit):
-    f=open("./data/admin1db.json", "w")
+    f = open("./data/admin1db.json", "w")
     f.write("test")
     f.close()
     remove_admin = bcit.delete_admin("admin1")
@@ -72,13 +74,6 @@ def test_check_database_name(bcit):
     assert admin is True
     admin = bcit.check_database_name("test")
     assert admin is False
-
-
-def test_add_login(bcit):
-    hareem = Admin(admin_username="hareem",
-                   admin_password="hareem", admin_database="test_hareem")
-    bcit.add_login(hareem)
-    assert hareem in bcit.login
 
 
 def test_login_authenticate(bcit):
