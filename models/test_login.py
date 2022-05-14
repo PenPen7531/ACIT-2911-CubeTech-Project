@@ -48,12 +48,20 @@ def test_find_login_by_username(bcit):
     assert admin == None
 
 
-def test_add_login(bcit):
+@patch("builtins.open", new_callable=mock_open)
+def test_add_login(mock_file, bcit):
     hareem = Admin(admin_username="hareem",
                    admin_password="hareem", admin_database="test_hareem")
     bcit.add_login(hareem)
     bcit.save()
     assert hareem in bcit.login
+
+# def test_add_login(bcit):
+#     hareem = Admin(admin_username="hareem",
+#                    admin_password="hareem", admin_database="test_hareem")
+#     bcit.add_login(hareem)
+#     bcit.save()
+#     assert hareem in bcit.login
 
 
 def test_delete_admin(bcit):
