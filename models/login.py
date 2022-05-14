@@ -15,7 +15,6 @@ class Login:
             admin_username = login.get("username")
             admin_password = login.get("password")
             admin_database = login.get("database")
-
             admin_obj = Admin(admin_username, admin_password, admin_database)
             self.login.append(admin_obj)
 
