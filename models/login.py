@@ -30,8 +30,10 @@ class Login:
         for login in self.login:
             login_dict = login.to_dict()
             login_list.append(login_dict)
-        file = open("data/logins.json", "w")
-        file.write(json.dumps(login_list))
+        # file = open("data/logins.json", "w")
+        # file.write(json.dumps(login_list))
+        with open("data/logins.json", "w") as fp:
+            json.dump(login_list, fp)
 
     def login_authenticate(self, username, password):
         enc_password = Crypto.enc_pass(password)
