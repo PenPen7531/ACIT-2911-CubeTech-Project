@@ -66,8 +66,13 @@ def homepage():
             if request.method == "GET":
                 return render_template("home.html", company=COMPANY), 201
             if request.method == "POST":
+                fname=request.form.get("first_name")
                 department = request.form.get("department")
-                return redirect("/department/"+department)
+                if fname=="" or fname==None:
+                    return redirect("/department/"+department)
+                if department=="" or department==None:
+                    return redirect("/fname/"+fname)
+                return redirect(f"/search/{fname}/{department}")
         except:
             return "Error", 404
     else:
@@ -155,15 +160,53 @@ def put_user(employee_id):
 def show_department(employee_department):
     if LOGIN:
         if request.method == "GET":
-            department = COMPANY.find_employees_by_department(
-                employee_department)
+            department = COMPANY.find_employees_by_department(employee_department)
             return render_template("department.html", department=department)
         if request.method == "POST":
+            fname=request.form.get("first_name")
             department = request.form.get("department")
-            return redirect("/department/"+department)
+            if fname=="" or fname==None:
+                return redirect("/department/"+department)
+            if department=="" or department==None:
+                return redirect("/fname/"+fname)
+            return redirect(f"/search/{fname}/{department}")
     else:
         return render_template("signin_error.html")
 
+@app.route("/fname/<employee_firstname>", methods=["GET", "POST"])
+def show_firstname(employee_firstname):
+    if LOGIN:
+        if request.method == "GET":
+            employees = COMPANY.find_employees_by_fname(employee_firstname)
+            return render_template("department.html", department=employees)
+        if request.method == "POST":
+            fname=request.form.get("first_name")
+            department = request.form.get("department")
+            if fname=="" or fname==None:
+                return redirect("/department/"+department)
+            if department=="" or department==None:
+                return redirect("/fname/"+fname)
+            return redirect(f"/search/{fname}/{department}")
+    else:
+        return render_template("signin_error.html")
+
+
+@app.route("/search/<employee_firstname>/<employee_department>", methods=["GET", "POST"])
+def show_dept_and_name(employee_firstname, employee_department):
+    if LOGIN:
+        if request.method == "GET":
+            employees = COMPANY.find_employee_by_fname_department(employee_firstname, employee_department)
+            return render_template("department.html", department=employees)
+        if request.method == "POST":
+            fname=request.form.get("first_name")
+            department = request.form.get("department")
+            if fname=="" or fname==None:
+                return redirect("/department/"+department)
+            if department=="" or department==None:
+                return redirect("/fname/"+fname)
+            return redirect(f"/search/{fname}/{department}")
+    else:
+        return render_template("signin_error.html")
 
 @app.route("/logout")
 def logout():
