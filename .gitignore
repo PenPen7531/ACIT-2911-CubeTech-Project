@@ -2,3 +2,6 @@ models/_pycache_
 my_env/
 testfiles/__pycache__
 .coverage
+__pycache__
+.pytest_cache
+venv

@@ -1,4 +1,4 @@
-from typing import Type
+
 from unittest.util import strclass
 
 
