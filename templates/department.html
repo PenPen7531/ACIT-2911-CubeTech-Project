@@ -16,23 +16,32 @@
 <body>
     <nav id="home-nav">
         <h2 class="home-tag">EmpNet</h2>
+        <h3><a href="/confirm">Delete Database</a></h3> 
         <h3><a href="/logout">Logout</a></h3>
     </nav>
     <div class="main-heading">
-        <h1>{{ department.employee_department }} Database</h1>
+        <p id="title-home">{{ department.employee_department }} Database</p>
+        <div class="emp_sum"><p>Department Search</p>
+        </div>
     </div>
     <div class="home-content">
-        <div id="home-newemp-depsearch">
-            <form method = "POST">
-                <label id='search-label' for = "department">Department Search</label>
-                <input id ='dep-search' type="text" name = "department" id ="post_input"/>
-                <button class="search-icon"><i class="fa fa-search"></i></button>
-                <label id='search-label' for = "first_name">First Name Search</label>
-                <input id ='dep-search' type="text" name = "first_name" id ="post_input"/>
-                <button class="search-icon"><i class="fa fa-search"></i></button>
+        <div class="search-top">
+            <form class='home-post-form' method = "POST">
+                <div>
+                    <label id='search-label' for = "department">Department Search</label>
+                    <input id ='dep-search' type="text" name = "department" id ="post_input"/>
+                    <button class="search-icon"><i class="fa fa-search"></i></button>
+                </div>
+                <div>
+                    <label id='search-label' for = "first_name">First Name Search&nbsp;</label>
+                    <input id ='dep-search' type="text" name = "first_name" id ="post_input"/>
+                    <button class="search-icon"><i class="fa fa-search"></i></button>
+                </div>
             </form>
+            <div id='style-one' class="home-post-form">
+            <div><a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a></div>
             <a id="clear-filter" href="/view"><button type="button" class="btn btn-danger">Clear Filters</button></a>
-            <a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a>
+            </div>
         </div>
         <!-- <label for="departments">Filter by Department </label>
         <select name="departments" id="departments">

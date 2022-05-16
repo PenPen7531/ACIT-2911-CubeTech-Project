@@ -1,6 +1,6 @@
 import json
-# from models.employee import Employee  # run this line when running the webapp
-from models.employee import Employee
+from models.employee import Employee  # run this line when running the webapp
+#from employee import Employee
 
 
 class Company():
@@ -41,20 +41,6 @@ class Company():
             if employee.employee_department == employee_department:
                 employee_in_dept.append(employee)
         return employee_in_dept
-
-    def find_employees_by_fname(self, employee_name):
-        employee_list=[]
-        for employee in self.employees:
-            if employee.first_name == employee_name:
-                employee_list.append(employee)
-        return employee_list
-    
-    def find_employee_by_fname_department(self, fname, dept):
-        employee_list=[]
-        for employee in self.employees:
-            if employee.first_name==fname and employee.employee_department==dept:
-                employee_list.append(employee)
-        return employee_list
 
     def delete(self, employee_id):
         employee = self.find_employee_by_id(employee_id)

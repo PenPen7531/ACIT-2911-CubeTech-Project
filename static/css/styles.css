@@ -21,6 +21,33 @@
     background-color: white;
   }
 
+  #title-home {
+      font-size: 32px;
+      color: #4675C0;
+  }
+
+  .home-post-form {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: flex-end;
+  }
+
+  #style-one {
+      text-align: right;
+      padding-left: 5.5%;
+      gap: 3px;
+  }
+
+  #style-two {
+      align-self: flex-end;
+  }
+
+  .home-post-form button {
+      font-size: 14px;
+  }
+
   table, th, td {
     border: 1px solid;
     padding: 30px;
@@ -91,7 +118,7 @@ label {
 }
 
 label, input {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .input-right {
@@ -143,15 +170,25 @@ label, input {
 }
 
 .home-content {
-    margin: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    padding: 10px;
 }
 
 .main-heading {
+    margin-bottom: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+.search-top {
+    display: flex;
+    flex-direction: row;
+    gap: 54%;
 }
 
 #home-nav .home-tag {
@@ -177,17 +214,6 @@ label, input {
     font-weight: bold;
 }
 
-#home-newemp-depsearch {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-left: 20px;
-}
-
-#home-newemp-depsearch a {
-    text-decoration: none;
-}
-
 #dep-search {
     width: 210px;
     height: 27px;
@@ -201,10 +227,6 @@ label, input {
 #search-label {
     font-family: arial,sans-serif;
     color: #4675C0;
-}
-
-.home-content table {
-    margin-right: 80px;
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
@@ -242,6 +264,11 @@ label, input {
     font-size: 6rem;
 }
 
+#table-data {
+    margin: auto;
+    width: 100%;
+}
+
 .emp_sum > p {
     font-size: 20px;
     font-weight: bold;
@@ -254,7 +281,7 @@ label, input {
   }
   
 /* The actual popup */
-.popup .popuptext {
+/* .popup .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -267,7 +294,7 @@ label, input {
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
-}
+} */
 
 .styled-table {
     border-collapse: collapse;
@@ -278,8 +305,17 @@ label, input {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+#emp-sal {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: row;
+}
+
+#emp-sal p {
+    font-size: 18px;
+}
 /* Popup arrow */
-.popup .popuptext::after {
+/* .popup .popuptext::after {
 content: "";
 position: absolute;
 top: 100%;
@@ -288,17 +324,17 @@ margin-left: -5px;
 border-width: 5px;
 border-style: solid;
 border-color: #555 transparent transparent transparent;
-}
+} */
 
-/* Toggle this class - hide and show the popup */
+/* Toggle this class - hide and show the popup
 .popup .show {
-visibility: visible;
--webkit-animation: fadeIn 1s;
-animation: fadeIn 0s;
-}
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
 
 /* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
+/* @-webkit-keyframes fadeIn {
 from {opacity: 0;} 
 to {opacity: 1;}
 }
@@ -306,7 +342,7 @@ to {opacity: 1;}
 @keyframes fadeIn {
 from {opacity: 0;}
 to {opacity:1 ;}
-}
+} */ 
 
 
 

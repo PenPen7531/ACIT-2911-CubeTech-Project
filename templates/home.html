@@ -20,34 +20,38 @@
             <h3><a href="/logout">Logout</a></h3>
         </nav>
         <div class="main-heading">
-            <h1>{{ company.name.upper() }} Employee Database</h1>
-        </div>
-        <div class="emp_sum">
-            <p>Total number of Employees: {{ company.employee_count() }}</p>
+            <p id="title-home">{{ company.name.upper() }} Employee Database</p>
+            <div class="emp_sum">
+                <p>Total number of Employees: {{ company.employee_count() }}</p>
+            </div>
         </div>
         <div class="home-content">
-            <div id="home-newemp-depsearch">
-                <form method = "POST">
-                    <label id='search-label' for = "department">Department Search</label>
-                    <input id ='dep-search' type="text" name = "department" id ="post_input"/>
-                    <button class="search-icon"><i class="fa fa-search"></i></button>
-                    <label id='search-label' for = "first_name">First Name Search</label>
-                    <input id ='dep-search' type="text" name = "first_name" id ="post_input"/>
-                    <button class="search-icon"><i class="fa fa-search"></i></button>
+            <div class="search-top">
+                <form class='home-post-form' method = "POST">
+                    <div>
+                        <label id='search-label' for = "department">Department Search</label>
+                        <input id ='dep-search' type="text" name = "department" id ="post_input"/>
+                        <button class="search-icon"><i class="fa fa-search"></i></button>
+                    </div>
+                    <div>
+                        <label id='search-label' for = "first_name">First Name Search&nbsp;</label>
+                        <input id ='dep-search' type="text" name = "first_name" id ="post_input"/>
+                        <button class="search-icon"><i class="fa fa-search"></i></button>
+                    </div>
                 </form>
-                <a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a>
-                <div class="popup btn btn-primary" onclick="myFunction()"> Show Salary Total
-                    <span class="popuptext" id="myPopup">$ {{ company.salary_sum() }}</span>
+                <div id='style-two' class="home-post-form">
+                    <div id="emp-sal"><a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a></div>
+                    <div id="emp-sal"><p>Total Salary: ${{ company.salary_sum() }}</p></div>
                 </div>
+                    <!-- <label for="departments">Filter by Department </label>
+                    <select name="departments" id="departments">
+                        <option value="marketing">Marketing</option>
+                        <option value="finance">Finance</option>
+                        <option value="human_resources">Human Resources</option>
+                        <option value="it">IT</option>
+                        <option value="operations">Operations</option>
+                    </select> -->
             </div>
-                <!-- <label for="departments">Filter by Department </label>
-                <select name="departments" id="departments">
-                    <option value="marketing">Marketing</option>
-                    <option value="finance">Finance</option>
-                    <option value="human_resources">Human Resources</option>
-                    <option value="it">IT</option>
-                    <option value="operations">Operations</option>
-                </select> -->
             <table id="table-data" class="table table-striped styled-table">
                 <thead class="thead-dark">
                     <th onclick="sortTable(0)">Employee ID</th>
@@ -75,13 +79,5 @@
                 </tbody>
             </table>
         </div>
-
-        <!-- script to display the pop up message -->
-        <script>
-            function myFunction() {
-              var popup = document.getElementById("myPopup");
-              popup.classList.toggle("show");
-            }
-        </script>
     </body>
 </html>

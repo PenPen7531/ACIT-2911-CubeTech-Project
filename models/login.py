@@ -1,9 +1,9 @@
 import json
-# from models.admin import Admin  # for running webapp
-from models.admin import Admin
+from models.admin import Admin  # for running webapp
+#from admin import Admin
 import os
-# from models.crypto import Crypto  # for running webapp
-from models.crypto import Crypto
+from models.crypto import Crypto  # for running webapp
+#from crypto import Crypto
 
 
 class Login:
@@ -15,6 +15,7 @@ class Login:
             admin_username = login.get("username")
             admin_password = login.get("password")
             admin_database = login.get("database")
+
             admin_obj = Admin(admin_username, admin_password, admin_database)
             self.login.append(admin_obj)
 
