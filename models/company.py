@@ -56,6 +56,7 @@ class Company():
 
     def salary_sum(self):
         total = 0
+        self.save()
         for employees in self.employees:
             total += employees.employee_salary
         return total
@@ -65,15 +66,15 @@ class Company():
         return num_emp
 
     def find_employees_by_fname(self, employee_name):
-        employee_list=[]
+        employee_list = []
         for employee in self.employees:
             if employee.first_name == employee_name:
                 employee_list.append(employee)
         return employee_list
 
     def find_employee_by_fname_department(self, fname, dept):
-        employee_list=[]
+        employee_list = []
         for employee in self.employees:
-            if employee.first_name==fname and employee.employee_department==dept:
+            if employee.first_name == fname and employee.employee_department == dept:
                 employee_list.append(employee)
         return employee_list
