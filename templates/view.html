@@ -33,10 +33,10 @@
     
 
     <div class="emp_id">
-        <p><u>{{ company.name }} employee ID: {{ employee.employee_id }}</u></p>
+        <p>{{ company.name }}: {{ employee.last_name }}, {{ employee.first_name }}</p>
     </div>  
 
-    <div class="main_container">
+    <!-- <div class="main_container">
         <div class="emp_info">
             <p><b>First Name:</b> {{ employee.first_name }}</p>
             <br>
@@ -48,7 +48,27 @@
             <br>
             <p><b>Employee Age:</b> {{ employee.employee_age }}</p>
         </div>
-    </div>
+    </div> -->
+    <table class="table table-striped styled-table">
+        <thead class="thead-dark">
+            <th>Employee ID</th>
+            <th>Employee First Name</th>
+            <th>Employee Last Name</th>
+            <th>Employee Department</th>
+            <th>Employee Salary ($)</th>
+            <th>Employee Age</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="emp-id">{{ employee.employee_id }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.employee_department }}</td>
+                <td>{{ employee.employee_salary }}</td>
+                <td>{{ employee.employee_age }}</td>
+            </tr>
+        </tbody>
+    </table>
 
     <div class="nav_bar">
         <a href="/edit/{{ employee.employee_id }}"><button type="button" class="btn btn-primary">Edit Employee</button></a>
