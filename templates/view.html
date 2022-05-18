@@ -12,68 +12,54 @@
 
 </head>
 <body>
-    <!-- <div class="main">
-        <div class="name">
-            <h2>EmpNet</h2>
-        </div>
-    
-
-        <div class="home">
-            <a href="/view">Home</a>
-        </div>
-
-    </div> -->
     <nav id="home-nav">
         <h2 class="home-tag">EmpNet</h2>
-        <!-- <h3><a href="/confirm">Delete Database</a></h3> -->
         <h3><a href="/view" class="btn btn-primary">Home</a></h3>
     </nav>
 
-    
-    
-
     <div class="emp_id">
-        <p>{{ company.name }}: {{ employee.last_name }}, {{ employee.first_name }}</p>
+        <p>Company: {{ company.name }}</p>
+        <p>Employee:  {{ employee.last_name }}, {{ employee.first_name }}</p>
     </div>  
 
-    <!-- <div class="main_container">
-        <div class="emp_info">
-            <p><b>First Name:</b> {{ employee.first_name }}</p>
-            <br>
-            <p><b>Last Name:</b> {{ employee.last_name }}</p>
-            <br>
-            <p><b>Department:</b> {{ employee.employee_department }}</p>
-            <br>
-            <p><b>Employee Salary:</b> {{ employee.employee_salary }}</p>
-            <br>
-            <p><b>Employee Age:</b> {{ employee.employee_age }}</p>
+    <div class="content">
+        <div class="table-div">
+            <table class="table table-striped styled-table">
+                <thead class="table-head">
+                    <tr>
+                        <td class="data-field"><b>Employee ID</b></td>
+                        <td id="emp-id" class="table-data"><b>{{ employee.employee_id }}</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="data-field">First Name</td>
+                        <td class="table-data">{{ employee.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="data-field">Last Name</td>
+                        <td class="table-data">{{ employee.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="data-field">Department</td>
+                        <td class="table-data">{{ employee.employee_department }}</td>
+                    </tr>
+                    <tr>
+                        <td class="data-field">Salary</td>
+                        <td class="table-data">${{ employee.employee_salary }} CAD</td>
+                    </tr>
+                    <tr>
+                        <td class="data-field">Age</td>
+                        <td class="table-data">{{ employee.employee_age }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div> -->
-    <table class="table table-striped styled-table">
-        <thead class="thead-dark">
-            <th>Employee ID</th>
-            <th>Employee First Name</th>
-            <th>Employee Last Name</th>
-            <th>Employee Department</th>
-            <th>Employee Salary ($)</th>
-            <th>Employee Age</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="emp-id">{{ employee.employee_id }}</td>
-                <td>{{ employee.first_name }}</td>
-                <td>{{ employee.last_name }}</td>
-                <td>{{ employee.employee_department }}</td>
-                <td>{{ employee.employee_salary }}</td>
-                <td>{{ employee.employee_age }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <div class="nav_bar">
-        <a href="/edit/{{ employee.employee_id }}"><button type="button" class="btn btn-primary">Edit Employee</button></a>
-        <br>
-        <a href="/delete/{{ employee.employee_id }}"><button type="button" class="btn btn-danger">Delete Employee</button></a>
+        <div class="nav_bar">
+            <a href="/edit/{{ employee.employee_id }}"><button type="button" class="btn btn-primary">Edit Employee</button></a>
+            <a href="/delete/{{ employee.employee_id }}"><button type="button" class="btn btn-danger">Delete Employee</button></a>
+        </div>
     </div>
 </body>
 </html>
