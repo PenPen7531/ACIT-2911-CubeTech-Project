@@ -59,15 +59,14 @@ h3{
 }
 
 #home-nav a {
+    font-family: arial,sans-serif;
     font-size: 16px;
     text-decoration: none;
-    /*color: rgb(83, 80, 80);*/
-    color: white; 
+    color: rgb(83, 80, 80);
 }
 
 #home-nav a:hover {
-    color: #4675C0;
-    background-color: white;
+    color: black;
     text-shadow: 1px rgba(75, 73, 73, 0.79)
 }
 
