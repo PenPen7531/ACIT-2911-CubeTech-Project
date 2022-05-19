@@ -187,6 +187,11 @@ label, input {
     flex-direction: column;
 }
 
+.button-div {
+    display: flex;
+    flex-direction: column;
+}
+
 .search-top {
     display: flex;
     flex-direction: row;
