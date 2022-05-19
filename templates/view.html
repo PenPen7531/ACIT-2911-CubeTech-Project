@@ -4,59 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Employee {{ employee.employee_id }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/view.css') }}">
+    <title>{{ company.name }} Employee Database</title>
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="../static/fontawesome/css/fontawesome.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script defer src="../static/js/apps.js"></script>
+
+
 </head>
-<body>
-    <nav id="home-nav">
-        <h2 class="home-tag">EmpNet</h2>
-        <h3><a href="/view" class="btn btn-primary">Home</a></h3>
-    </nav>
-
-    <div class="emp_id">
-        <p>Company: {{ company.name }}</p>
-        <p>Employee:  {{ employee.last_name }}, {{ employee.first_name }}</p>
-    </div>  
-
-    <div class="content">
-        <div class="table-div">
-            <table class="table table-striped styled-table">
-                <thead class="table-head">
-                    <tr>
-                        <td class="data-field"><b>Employee ID</b></td>
-                        <td id="emp-id" class="table-data"><b>{{ employee.employee_id }}</b></td>
-                    </tr>
+    <body>
+        <nav id="home-nav">
+            <h2 class="home-tag">EmpNet</h2>
+            <h3><a href="/confirm">Delete Database</a></h3> 
+            <h3><a href="/logout">Logout</a></h3>
+        </nav>
+        <div class="main-heading">
+            <p id="title-home">{{ company.name.upper() }} Employee Database</p>
+            <div class="emp_sum">
+                <p>Total number of Employees: {{ company.employee_count() }}</p>
+            </div>
+        </div>
+        <div class="home-content">
+            <div class="search-top">
+                <form class='home-post-form' method = "POST">
+                    <div>
+                        <label id='search-label' for = "department">Department Search</label>
+                        <input id ='dep-search' type="text" name = "department" id ="post_input"/>
+                        <button class="search-icon"><i class="fa fa-search"></i></button>
+                    </div>
+                    <div>
+                        <label id='search-label' for = "first_name">First Name Search&nbsp;</label>
+                        <input id ='dep-search' type="text" name = "first_name" id ="post_input"/>
+                        <button class="search-icon"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+                <div id='style-two' class="home-post-form">
+                    <div id="emp-sal"><a href="/create"><button type="button" class="btn btn-primary">Add New Employee</button></a></div>
+                    <div id="emp-sal"><p>Total Salary: ${{ company.salary_sum() }}</p></div>
+                </div>
+                    <!-- <label for="departments">Filter by Department </label>
+                    <select name="departments" id="departments">
+                        <option value="marketing">Marketing</option>
+                        <option value="finance">Finance</option>
+                        <option value="human_resources">Human Resources</option>
+                        <option value="it">IT</option>
+                        <option value="operations">Operations</option>
+                    </select> -->
+            </div>
+            <table id="table-data" class="table table-striped styled-table">
+                <thead class="thead-dark">
+                    <th onclick="sortTable(0)">Employee ID</th>
+                    <th onclick="sortTable(1)">Employee First Name</th>
+                    <th onclick="sortTable(2)">Employee Last Name</th>
+                    <th onclick="sortTable(3)">Employee Department</th>
+                    <th onclick="sortTable(4)">Employee Salary ($)</th>
+                    <th onclick="sortTable(5)">Employee Age</th>
+                    <th colspan="2">Methods</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="data-field">First Name</td>
-                        <td class="table-data">{{ employee.first_name }}</td>
-                    </tr>
-                    <tr>
-                        <td class="data-field">Last Name</td>
-                        <td class="table-data">{{ employee.last_name }}</td>
-                    </tr>
-                    <tr>
-                        <td class="data-field">Department</td>
-                        <td class="table-data">{{ employee.employee_department }}</td>
-                    </tr>
-                    <tr>
-                        <td class="data-field">Salary</td>
-                        <td class="table-data">${{ employee.employee_salary }} CAD</td>
-                    </tr>
-                    <tr>
-                        <td class="data-field">Age</td>
-                        <td class="table-data">{{ employee.employee_age }}</td>
-                    </tr>
+                {% for employee in company.employees %} 
+                <tr>
+                    <td id="emp-id">{{ employee.employee_id }}</td>
+                    <td>{{ employee.first_name }}</td>
+                    <td>{{ employee.last_name }}</td>
+                    <td>{{ employee.employee_department }}</td>
+                    <td>{{ employee.employee_salary }}</td>
+                    <td>{{ employee.employee_age }}</td>
+                    <td><a href="/delete/{{ employee.employee_id }}" class="delete" onclick="return deleteConfirm()">Delete</a></td>
+                    <td><a href="/view/{{ employee.employee_id }}">View</a></td>
+                    
+                </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>
-
-        <div class="nav_bar">
-            <a href="/edit/{{ employee.employee_id }}"><button type="button" class="btn btn-primary">Edit Employee</button></a>
-            <a href="/delete/{{ employee.employee_id }}"><button type="button" class="btn btn-danger">Delete Employee</button></a>
-        </div>
-    </div>
-</body>
+    </body>
 </html>
