@@ -187,9 +187,20 @@ label, input {
     flex-direction: column;
 }
 
+#home-newemp-depsearch {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .button-div {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+}
+
+.button-div button {
+    width: 150px;
 }
 
 .search-top {
