@@ -53,7 +53,7 @@ function sortTable(n) {
 
 /* Source: https://www.w3schools.com/howto/howto_js_sort_table.asp */
 
-// Delete Confirm
+//Delete Confirm
 
 // const row = document.querySelectorAll("tr")
 // row.forEach(element => element.addEventListener('click', getEmpId))
@@ -67,6 +67,7 @@ function sortTable(n) {
 
 function deleteConfirm(){
     return confirm(`Are you sure you want to delete Employee`)
+<<<<<<< HEAD
 }
 
 // Display employee Salary
@@ -97,3 +98,6 @@ function closeDrop() {
 }
 
 
+=======
+}
+>>>>>>> 865163c49f866f82c69cf6bb1b50538e9433c59b

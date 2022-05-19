@@ -1,21 +1,23 @@
+from flask import Flask, request, jsonify, render_template, redirect, session
 
-import json
-from flask import Flask, request, jsonify, render_template, redirect
-import requests
 import os
 from models.company import Company
+from models.data import Data
 from models.employee import Employee
 from models.admin import Admin
 from models.login import Login
 from models.crypto import Crypto
+from models.logs import Logs
+from models.data import Data
+from datetime import date, datetime
 
-
+LOGIN=False
 app = Flask(__name__)
 # Constant variable. Python will always make sure when the application start this is always false
-LOGIN = False
+
 
 # Home page. Used to log in into a specific account based on the username
-
+user=Login()
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -49,10 +51,16 @@ def login():
 
             # Creates another global variable. Allows all functions to use this variable. Makes the scope to the entire file
             global COMPANY
-
             # The company is now the user database
             # The database name is used to find the companies database related to that name
             COMPANY = Company(user_data.database)
+            global LOGS
+            LOGS=Logs(user_data.database)
+            today=date.today()
+            time=datetime.now()
+            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}","Access Data")
+            LOGS.add(action)
+            LOGS.save()
             LOGIN = True
             return redirect("/view")
         else:
@@ -62,21 +70,34 @@ def login():
 @app.route("/view", methods=["GET", "POST"])
 def homepage():
     if LOGIN:
-        try:
-            if request.method == "GET":
-                return render_template("home.html", company=COMPANY), 201
-            if request.method == "POST":
-                fname=request.form.get("first_name")
-                department = request.form.get("department")
-                if fname=="" or fname==None:
-                    return redirect("/department/"+department)
-                if department=="" or department==None:
-                    return redirect("/fname/"+fname)
-                return redirect(f"/search/{fname}/{department}")
-        except:
-            return "Error", 404
-    else:
-        return render_template("signin_error.html")
+        if request.method == "GET":
+            return render_template("home.html", company=COMPANY), 201
+        if request.method == "POST":
+            fname=request.form.get("first_name")
+            department = request.form.get("department")
+            LOGS=Logs(COMPANY.name)
+            if fname=="" or fname==None:
+                today=date.today()
+                time=datetime.now()
+                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect("/department/"+department), 302  
+            if department=="" or department==None:
+                today=date.today()
+                time=datetime.now()
+                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect("/fname/"+fname), 302
+            today=date.today()
+            time=datetime.now()
+            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+            LOGS.add(action)
+            LOGS.save()
+            return redirect(f"/search/{fname}/{department}"), 302
+    return render_template("signin_error.html"), 404
+
 
 
 @app.route("/view/<employee_id>")
@@ -88,14 +109,14 @@ def view(employee_id):
         else:
             return "Employee not found", 404
     else:
-        return render_template("signin_error.html")
+        return render_template("signin_error.html"), 404
 
 
 @app.route("/create", methods=["GET", "POST"])
 def create_page():
     if LOGIN:
         if request.method == "GET":
-            return render_template("create.html")
+            return render_template("create.html"), 200
 
         if request.method == "POST":
             employee_fname = request.form.get("first_name")
@@ -108,21 +129,32 @@ def create_page():
                                employee_department, int(employee_salary), int(employee_age))
             COMPANY.add(new_emp)
             COMPANY.save()
-            return redirect("/view")
+            today=date.today()
+            time=datetime.now()
+            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Created Employee: {employee_fname}") 
+            LOGS.add(action)
+            LOGS.save()
+            return redirect("/view"), 302
     else:
-        return render_template("signin_error.html")
+        return render_template("signin_error.html"), 404
 
 
 @app.route("/delete/<employee_id>")
 def delete(employee_id):
     if LOGIN:
+        LOGS=Logs(COMPANY.name)
         if COMPANY.delete(employee_id):
             COMPANY.save()
+            today=date.today()
+            time=datetime.now()
+            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Deleted Employee: {employee_id}")
+            LOGS.add(action)
+            LOGS.save()
             return redirect("/view")
-        else:
+        elif COMPANY.delete(employee_id) == False:
             return "Unsucessful", 404
     else:
-        return render_template("signin_error.html")
+        return render_template("signin_error.html"), 200
 
 
 @app.route("/edit/<employee_id>", methods=["GET", "POST"])
@@ -151,69 +183,133 @@ def put_user(employee_id):
             if emp.employee_age != emp_age:
                 emp.employee_age = int(emp_age)
             COMPANY.save()
-            return render_template("view.html", employee=emp, company=COMPANY)
+            today=date.today()
+            time=datetime.now()
+            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Edit Employee: {employee_id}")      
+            LOGS.add(action)
+            LOGS.save()
+            return render_template("view.html", employee=emp, company=COMPANY), 200
     else:
-        return render_template("signin_error.html")
+        return render_template("signin_error.html"), 200
 
 
 @app.route("/department/<employee_department>", methods=["GET", "POST"])
 def show_department(employee_department):
-    if LOGIN:
-        if request.method == "GET":
-            department = COMPANY.find_employees_by_department(employee_department)
-            return render_template("department.html", department=department)
-        if request.method == "POST":
-            fname=request.form.get("first_name")
-            department = request.form.get("department")
-            if fname=="" or fname==None:
-                return redirect("/department/"+department)
-            if department=="" or department==None:
-                return redirect("/fname/"+fname)
-            return redirect(f"/search/{fname}/{department}")
-    else:
-        return render_template("signin_error.html")
+    try:
+        if LOGIN:
+            LOGS=Logs(COMPANY.name)
+            if request.method == "GET":
+                department = COMPANY.find_employees_by_department(employee_department)
+                return render_template("department.html", department=department)
+            if request.method == "POST":
+                    fname=request.form.get("first_name")
+                    department = request.form.get("department")
+                    if fname=="" or fname==None:
+                        today=date.today()
+                        time=datetime.now()
+                        action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
+                        LOGS.add(action)
+                        LOGS.save()
+                        return redirect("/department/"+department)
+                    if department=="" or department==None:
+                        today=date.today()
+                        time=datetime.now()
+                        action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
+                        LOGS.add(action)
+                        LOGS.save()
+                        return redirect("/fname/"+fname)
+                    today=date.today()
+                    time=datetime.now()
+                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+                    LOGS.add(action)
+                    LOGS.save()
+                    return redirect(f"/search/{fname}/{department}")
+    except:
+        return render_template("signin_error.html"), 404
+
 
 @app.route("/fname/<employee_firstname>", methods=["GET", "POST"])
 def show_firstname(employee_firstname):
+
     if LOGIN:
+        LOGS=Logs(COMPANY.name)
         if request.method == "GET":
             employees = COMPANY.find_employees_by_fname(employee_firstname)
             return render_template("department.html", department=employees)
         if request.method == "POST":
-            fname=request.form.get("first_name")
-            department = request.form.get("department")
-            if fname=="" or fname==None:
-                return redirect("/department/"+department)
-            if department=="" or department==None:
-                return redirect("/fname/"+fname)
-            return redirect(f"/search/{fname}/{department}")
-    else:
-        return render_template("signin_error.html")
+                fname=request.form.get("first_name")
+                department = request.form.get("department")
+                if fname=="" or fname==None:
+                    today=date.today()
+                    time=datetime.now()
+                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
+                    LOGS.add(action)
+                    LOGS.save()
+                    return redirect("/department/"+department)
+                if department=="" or department==None:
+                    today=date.today()
+                    time=datetime.now()
+                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
+                    LOGS.add(action)
+                    LOGS.save()
+                    return redirect("/fname/"+fname)
+                today=date.today()
+                time=datetime.now()
+                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect(f"/search/{fname}/{department}")
+    return render_template("signin_error.html")
+
 
 
 @app.route("/search/<employee_firstname>/<employee_department>", methods=["GET", "POST"])
 def show_dept_and_name(employee_firstname, employee_department):
-    if LOGIN:
-        if request.method == "GET":
-            employees = COMPANY.find_employee_by_fname_department(employee_firstname, employee_department)
-            return render_template("department.html", department=employees)
-        if request.method == "POST":
-            fname=request.form.get("first_name")
-            department = request.form.get("department")
-            if fname=="" or fname==None:
-                return redirect("/department/"+department)
-            if department=="" or department==None:
-                return redirect("/fname/"+fname)
-            return redirect(f"/search/{fname}/{department}")
-    else:
+    try:
+        if LOGIN:
+            LOGS=Logs(COMPANY.name)
+            if request.method == "GET":
+                employees = COMPANY.find_employee_by_fname_department(employee_firstname, employee_department)
+                return render_template("department.html", department=employees)
+            if request.method == "POST":
+                    fname=request.form.get("first_name")
+                    department = request.form.get("department")
+                    if fname=="" or fname==None:
+                        today=date.today()
+                        time=datetime.now()
+                        action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
+                        LOGS.add(action)
+                        LOGS.save()
+                        return redirect("/department/"+department)
+                    if department=="" or department==None:
+                        today=date.today()
+                        time=datetime.now()
+                        action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
+                        LOGS.add(action)
+                        LOGS.save()
+                        return redirect("/fname/"+fname)
+                    today=date.today()
+                    time=datetime.now()
+                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+                    LOGS.add(action)
+                    LOGS.save()
+                    return redirect(f"/search/{fname}/{department}")
+        return render_template("signin_error.html")
+    except:
         return render_template("signin_error.html")
 
 @app.route("/logout")
 def logout():
     if LOGIN:
+        LOGS=Logs(COMPANY.name)
+        today=date.today()
+        time=datetime.now()
+        action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Logout")
+        LOGS.add(action)
+        LOGS.save()
         return redirect("/")
     else:
-        return render_template("signin_error.html")
+        return render_template("signin_error.html"), 404
 
 
 @app.route("/createAdmin", methods=["GET", "POST"])
@@ -230,10 +326,10 @@ def create_admin():
         users = Login()
         new_user = users.find_login_by_username(admin_username)
         if new_user != None:
-            return render_template("createerror.html")
+            return render_template("createerror.html"), 404
         check_database_name = users.check_database_name(admin_database)
         if check_database_name:
-            return render_template("createerror.html")
+            return render_template("createerror.html"), 404
         users.add_login(new_admin)
         users.save()
         new_company = Company(new_admin.database)
@@ -258,6 +354,14 @@ def delete_admin():
         else:
             return render_template("createerror.html"), 404
 
+
+@app.route("/viewlogs", methods=["GET"])
+def get_logs():
+    LOGS=Logs(COMPANY.name)
+    if LOGIN:
+        return render_template("logs.html", data=LOGS), 200
+
+    return render_template("signin_error.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

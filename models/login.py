@@ -57,5 +57,6 @@ class Login:
             if user.username == username:
                 self.login.pop(i)
                 os.remove(f"./data/{user.database}.json")
+                os.remove(f"./data/{user.database}_logs.json")
                 return True
         return False

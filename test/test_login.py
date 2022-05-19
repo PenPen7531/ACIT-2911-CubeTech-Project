@@ -1,8 +1,8 @@
 
 import pytest
-from login import Login
-from admin import Admin
-from crypto import Crypto
+from models.login import Login
+from models.admin import Admin
+from models.crypto import Crypto
 from unittest.mock import mock_open, patch
 
 
@@ -66,6 +66,9 @@ def test_add_login(mock_file, bcit):
 
 def test_delete_admin(bcit):
     f = open("./data/admin1db.json", "w")
+    f.write("test")
+    f.close()
+    f = open("./data/admin1db_logs.json", "w")
     f.write("test")
     f.close()
     remove_admin = bcit.delete_admin("admin1")
