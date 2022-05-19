@@ -67,7 +67,6 @@ function sortTable(n) {
 
 function deleteConfirm(){
     return confirm(`Are you sure you want to delete Employee`)
-<<<<<<< HEAD
 }
 
 // Display employee Salary
@@ -96,8 +95,3 @@ function closeDrop() {
   btn.style.display = 'block'
   search.style.display = 'flex'
 }
-
-
-=======
-}
->>>>>>> 865163c49f866f82c69cf6bb1b50538e9433c59b
