@@ -5,23 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Employee</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
 
 </head>
 <body>
-    <form method = "POST">
-        <label for = "username">Username:</label>
-        <input type="text" name = "username" id ="post_input" required />
-        <br>
-        <label for = "password">Password:</label>
-        <input type="text" name = "password" id ="post_input" required />
-        <br>
-        <label for = "database">Database Name:</label>
-        <input type="text" name = "database" id ="post_input" required />
-        <br>
+    <h1 id="delete-h1">DELETE DATABASE CONFIRMATION</h1>
+    <div class="delete-db">
+        <form id='form-db' method = "POST">
+            <label for = "username">Username</label>
+            <input type="text" name = "username" id ="post_input" required />
+            <br>
+            <label for = "password">Password</label>
+            <input type="text" name = "password" id ="post_input" required />
+            <br>
+            <label for = "database">Database Name</label>
+            <input type="text" name = "database" id ="post_input" required />
+            <br>
 
-        <input type = "submit" value = "Submit Data"/>
-        <a href="/view">Cancel</a>
-    </form>
+            <input type = "submit" value = "Submit Data"/>
+            <a href="/view">Cancel</a>
+        </form>
+    </div>
 </body>
 </html>

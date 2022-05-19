@@ -340,6 +340,27 @@ label, input {
 .icon-close {
     display: none;
 }
+
+.delete-db {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+#form-db {
+    padding-top: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+#delete-h1 {
+    padding-top: 30px;
+    text-align: center;
+}
 /* Popup arrow */
 /* .popup .popuptext::after {
 content: "";
