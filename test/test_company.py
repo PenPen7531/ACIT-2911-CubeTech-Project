@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import mock_open, patch
-from company import Company
-from employee import Employee
+from models.company import Company
+from models.employee import Employee
 
 JSON_FILE = """[
     {

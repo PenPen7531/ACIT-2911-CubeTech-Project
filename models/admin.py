@@ -1,5 +1,4 @@
 
-from unittest.util import strclass
 
 
 class Admin:
