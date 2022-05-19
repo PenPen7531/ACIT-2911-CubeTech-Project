@@ -351,7 +351,7 @@ label, input {
 }
 
 #form-db {
-    padding-top: 5%;
+    padding-top: 1%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -360,6 +360,16 @@ label, input {
 #delete-h1 {
     padding-top: 30px;
     text-align: center;
+}
+
+#view-cancel {
+    margin-top: 10px;
+    width: 20%;
+}
+
+#delete-p {
+    padding-top: 40px;
+    font-size: 16px;
 }
 /* Popup arrow */
 /* .popup .popuptext::after {
