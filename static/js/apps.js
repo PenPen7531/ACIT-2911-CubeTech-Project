@@ -74,3 +74,26 @@ function deleteConfirm(){
 //   const popup = document.getElementById("myPopup");
 //   popup.classList.toggle("show");
 // }
+
+
+function myDropDown() {
+  const dropNav = document.getElementById("menu")
+  const search = document.querySelector(".search-top")
+  const btn = document.querySelector('.icon')
+  const btnTwo = document.querySelector('.icon-close')
+  btnTwo.style.display = 'block'
+  search.style.display = 'none'
+  btn.style.display = 'none'
+  dropNav.style.display = 'block'
+}
+
+function closeDrop() {
+  const menu = document.getElementById("menu")
+  const btn = document.querySelector('.icon')
+  const search = document.querySelector(".search-top")
+  menu.style.display = 'none'
+  btn.style.display = 'block'
+  search.style.display = 'flex'
+}
+
+

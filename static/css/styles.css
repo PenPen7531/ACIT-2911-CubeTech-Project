@@ -27,6 +27,7 @@
   }
 
   .home-post-form {
+      width: 50%;
       margin-bottom: 20px;
       display: flex;
       flex-direction: column;
@@ -188,7 +189,6 @@ label, input {
 .search-top {
     display: flex;
     flex-direction: row;
-    gap: 54%;
 }
 
 #home-nav .home-tag {
@@ -314,6 +314,31 @@ label, input {
 #emp-sal p {
     font-size: 18px;
 }
+
+#home-nav .icon {
+    display: none;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+#home-nav .icon-close {
+    font-size: 30px;
+    color: black;
+}
+
+#menu div {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 50px;
+}
+
+.icon-close {
+    display: none;
+}
 /* Popup arrow */
 /* .popup .popuptext::after {
 content: "";
@@ -360,12 +385,57 @@ to {opacity:1 ;}
     #home-nav h3 {
         align-self: flex-end;
     }
-
-    #home-newemp-depsearch{
-        position: absolute;
-    }
+ 
 
     #table-data {
         margin-top: 200px
+    }
+
+    .search-top {
+        position: absolute;
+        flex-direction: column;
+        align-content: flex-start;
+    }
+
+    .home-post-form {
+        width: auto;
+    }
+
+    #style-one {
+        padding-left: 0;
+        text-align: left;
+        align-self: start;
+    }
+
+    #style-two {
+        align-self: start;
+    }
+
+    #home-nav .icon {
+        font-size: 24px;
+        display: block;
+    }
+
+    .icon-two {
+        display: block;
+    }
+
+    #menu { /*display */
+        right: 0;
+        display: none;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    #menu h3 {
+        margin: 30px;
+    }
+
+    #menu h3 a{
+        color: black;
+        font-size: 32px;
     }
 }

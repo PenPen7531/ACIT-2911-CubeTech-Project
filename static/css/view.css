@@ -127,32 +127,24 @@ th, td {
 
 @media screen and (max-width: 600px) {
     .emp_id {
-        padding-left: 20px;
         font-size: 22px;
-    }
-
-    .table-div {
-        width: 50vh;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .main {
-        width: 100%;
-    }
-
-    .home {
-        padding-left: 130px;
     }
 
     p {
         font-size: 18px;
     }
-    
+
+    .content {
+        margin: auto;
+        width: 95%;
+        padding: 10px;
+    }
+
+    .table-div .table {
+        width: 30%;
+    }
+
     .nav_bar {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        width: 50vh;
+        width: 75%;
     }
 }
