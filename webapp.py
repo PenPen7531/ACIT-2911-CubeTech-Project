@@ -11,13 +11,14 @@ from models.logs import Logs
 from models.data import Data
 from datetime import date, datetime
 
-LOGIN=False
+LOGIN = False
 app = Flask(__name__)
 # Constant variable. Python will always make sure when the application start this is always false
 
 
 # Home page. Used to log in into a specific account based on the username
-user=Login()
+user = Login()
+
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -55,10 +56,11 @@ def login():
             # The database name is used to find the companies database related to that name
             COMPANY = Company(user_data.database)
             global LOGS
-            LOGS=Logs(user_data.database)
-            today=date.today()
-            time=datetime.now()
-            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}","Access Data")
+            LOGS = Logs(user_data.database)
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime("%b-%d-%Y"),
+                          f"{time.hour}:{time.minute}", "Access Data")
             LOGS.add(action)
             LOGS.save()
             LOGIN = True
@@ -73,31 +75,33 @@ def homepage():
         if request.method == "GET":
             return render_template("home.html", company=COMPANY), 201
         if request.method == "POST":
-            fname=request.form.get("first_name")
+            fname = request.form.get("first_name")
             department = request.form.get("department")
-            LOGS=Logs(COMPANY.name)
-            if fname=="" or fname==None:
-                today=date.today()
-                time=datetime.now()
-                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
+            LOGS = Logs(COMPANY.name)
+            if fname == "" or fname == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by deptartment: {department}")
                 LOGS.add(action)
                 LOGS.save()
-                return redirect("/department/"+department), 302  
-            if department=="" or department==None:
-                today=date.today()
-                time=datetime.now()
-                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
+                return redirect("/department/"+department), 302
+            if department == "" or department == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname}")
                 LOGS.add(action)
                 LOGS.save()
                 return redirect("/fname/"+fname), 302
-            today=date.today()
-            time=datetime.now()
-            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname} and department: {department}")
             LOGS.add(action)
             LOGS.save()
             return redirect(f"/search/{fname}/{department}"), 302
     return render_template("signin_error.html"), 404
-
 
 
 @app.route("/view/<employee_id>")
@@ -130,9 +134,10 @@ def create_page():
                                employee_department, int(employee_salary), int(employee_age))
             COMPANY.add(new_emp)
             COMPANY.save()
-            today=date.today()
-            time=datetime.now()
-            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Created Employee: {employee_fname}") 
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Created Employee: {employee_fname}")
             LOGS.add(action)
             LOGS.save()
             return redirect("/view"), 302
@@ -143,12 +148,13 @@ def create_page():
 @app.route("/delete/<employee_id>")
 def delete(employee_id):
     if LOGIN:
-        LOGS=Logs(COMPANY.name)
+        LOGS = Logs(COMPANY.name)
         if COMPANY.delete(employee_id):
             COMPANY.save()
-            today=date.today()
-            time=datetime.now()
-            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Deleted Employee: {employee_id}")
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Deleted Employee: {employee_id}")
             LOGS.add(action)
             LOGS.save()
             return redirect("/view")
@@ -184,9 +190,10 @@ def put_user(employee_id):
             if emp.employee_age != emp_age:
                 emp.employee_age = int(emp_age)
             COMPANY.save()
-            today=date.today()
-            time=datetime.now()
-            action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Edit Employee: {employee_id}")      
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Edit Employee: {employee_id}")
             LOGS.add(action)
             LOGS.save()
             return render_template("view.html", employee=emp, company=COMPANY), 200
@@ -198,33 +205,38 @@ def put_user(employee_id):
 def show_department(employee_department):
 
     if LOGIN:
-        LOGS=Logs(COMPANY.name)
+        LOGS = Logs(COMPANY.name)
         if request.method == "GET":
-            department = COMPANY.find_employees_by_department(employee_department)
-            return render_template("department.html", department=department)
+            department = COMPANY.find_employees_by_department(
+                employee_department)
+            COMPANY.emp_count_by_department(department)
+            return render_template("department.html", department=department, emp_depart=employee_department, search=len(department), company=COMPANY)
         if request.method == "POST":
-                fname=request.form.get("first_name")
-                department = request.form.get("department")
-                if fname=="" or fname==None:
-                    today=date.today()
-                    time=datetime.now()
-                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
-                    LOGS.add(action)
-                    LOGS.save()
-                    return redirect("/department/"+department)
-                if department=="" or department==None:
-                    today=date.today()
-                    time=datetime.now()
-                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
-                    LOGS.add(action)
-                    LOGS.save()
-                    return redirect("/fname/"+fname)
-                today=date.today()
-                time=datetime.now()
-                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+            fname = request.form.get("first_name")
+            department = request.form.get("department")
+            if fname == "" or fname == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by deptartment: {department}")
                 LOGS.add(action)
                 LOGS.save()
-                return redirect(f"/search/{fname}/{department}")
+                return redirect("/department/"+department)
+            if department == "" or department == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect("/fname/"+fname)
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname} and department: {department}")
+            LOGS.add(action)
+            LOGS.save()
+            return redirect(f"/search/{fname}/{department}")
     return render_template("signin_error.html"), 404
 
 
@@ -232,78 +244,85 @@ def show_department(employee_department):
 def show_firstname(employee_firstname):
 
     if LOGIN:
-        LOGS=Logs(COMPANY.name)
+        LOGS = Logs(COMPANY.name)
         if request.method == "GET":
             employees = COMPANY.find_employees_by_fname(employee_firstname)
-            return render_template("department.html", department=employees)
+            return render_template("fname.html", department=employees, company=COMPANY)
         if request.method == "POST":
-                fname=request.form.get("first_name")
-                department = request.form.get("department")
-                if fname=="" or fname==None:
-                    today=date.today()
-                    time=datetime.now()
-                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
-                    LOGS.add(action)
-                    LOGS.save()
-                    return redirect("/department/"+department)
-                if department=="" or department==None:
-                    today=date.today()
-                    time=datetime.now()
-                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
-                    LOGS.add(action)
-                    LOGS.save()
-                    return redirect("/fname/"+fname)
-                today=date.today()
-                time=datetime.now()
-                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+            fname = request.form.get("first_name")
+            department = request.form.get("department")
+            if fname == "" or fname == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by deptartment: {department}")
                 LOGS.add(action)
                 LOGS.save()
-                return redirect(f"/search/{fname}/{department}")
+                return redirect("/department/"+department)
+            if department == "" or department == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect("/fname/"+fname)
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname} and department: {department}")
+            LOGS.add(action)
+            LOGS.save()
+            return redirect(f"/search/{fname}/{department}")
     return render_template("signin_error.html")
-
 
 
 @app.route("/search/<employee_firstname>/<employee_department>", methods=["GET", "POST"])
 def show_dept_and_name(employee_firstname, employee_department):
- 
+
     if LOGIN:
-        LOGS=Logs(COMPANY.name)
+        LOGS = Logs(COMPANY.name)
         if request.method == "GET":
-            employees = COMPANY.find_employee_by_fname_department(employee_firstname, employee_department)
-            return render_template("department.html", department=employees)
+            employees = COMPANY.find_employee_by_fname_department(
+                employee_firstname, employee_department)
+            return render_template("department.html", department=employees, company=COMPANY)
         if request.method == "POST":
-                fname=request.form.get("first_name")
-                department = request.form.get("department")
-                if fname=="" or fname==None:
-                    today=date.today()
-                    time=datetime.now()
-                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by deptartment: {department}")
-                    LOGS.add(action)
-                    LOGS.save()
-                    return redirect("/department/"+department)
-                if department=="" or department==None:
-                    today=date.today()
-                    time=datetime.now()
-                    action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname}")
-                    LOGS.add(action)
-                    LOGS.save()
-                    return redirect("/fname/"+fname)
-                today=date.today()
-                time=datetime.now()
-                action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Filter data by name: {fname} and department: {department}")
+            fname = request.form.get("first_name")
+            department = request.form.get("department")
+            if fname == "" or fname == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by deptartment: {department}")
                 LOGS.add(action)
                 LOGS.save()
-                return redirect(f"/search/{fname}/{department}")
+                return redirect("/department/"+department)
+            if department == "" or department == None:
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect("/fname/"+fname)
+            today = date.today()
+            time = datetime.now()
+            action = Data(today.strftime(
+                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Filter data by name: {fname} and department: {department}")
+            LOGS.add(action)
+            LOGS.save()
+            return redirect(f"/search/{fname}/{department}")
     return render_template("signin_error.html")
 
 
 @app.route("/logout")
 def logout():
     if LOGIN:
-        LOGS=Logs(COMPANY.name)
-        today=date.today()
-        time=datetime.now()
-        action=Data(today.strftime("%b-%d-%Y"),f"{time.hour}:{time.minute}",f"Logout")
+        LOGS = Logs(COMPANY.name)
+        today = date.today()
+        time = datetime.now()
+        action = Data(today.strftime("%b-%d-%Y"),
+                      f"{time.hour}:{time.minute}", f"Logout")
         LOGS.add(action)
         LOGS.save()
         return redirect("/")
@@ -356,12 +375,13 @@ def delete_admin():
 
 @app.route("/viewlogs", methods=["GET"])
 def get_logs():
-    
+
     if LOGIN:
-        LOGS=Logs(COMPANY.name)
+        LOGS = Logs(COMPANY.name)
         return render_template("logs.html", data=LOGS), 200
 
     return render_template("signin_error.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
