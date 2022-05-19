@@ -76,6 +76,15 @@ def edit_employee(client):
 def test_homepage(client):
     assert client.get("/").status_code == 201
 
+def test_invalid_dep_name_search(client):
+    assert client.get("/search/Norton/Accounting").status_code==200
+
+def test_invalid_search_from_dep(client):
+    assert department_search(client, "Accounting", "Norton").status_code==404
+
+def test_invalid_viewlogs(client):
+    assert client.get("viewlogs").status_code==200
+
 def test_invalid_home(client):
     assert login(client, "NotValid", "Not_Valid_pass").status_code == 404
 
@@ -152,6 +161,9 @@ def test_delete(client):
     assert client.get("/delete/A02").status_code==302
     assert client.get("/delete/A03test").status_code==404
 
+def test_logs(client):
+    login(client, "admin", "P@ssw0rd")
+    assert client.get("/viewlogs").status_code==200
 
 def test_department(client):
     login(client, "admin", "P@ssw0rd")
