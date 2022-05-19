@@ -438,4 +438,15 @@ to {opacity:1 ;}
         color: black;
         font-size: 32px;
     }
+
+    #log-table #table-data {
+        margin: 0;
+        width: 80%;
+        table-layout: fixed;
+    }
+
+    #log-table {
+        overflow: hidden;
+        width: 100%;
+    }
 }

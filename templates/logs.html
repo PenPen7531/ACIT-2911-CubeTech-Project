@@ -16,14 +16,18 @@
     <body>
         <nav id="home-nav">
             <h2 class="home-tag">EmpNet</h2>
-            <h3><a href="/view">Home</a></h3>
-            <h3><a href="/confirm">Delete Database</a></h3> 
-            <h3><a href="/logout">Logout</a></h3>
+            <div id="menu">
+                <div><a class="icon-close" onclick="closeDropTwo()">X</a></div>
+                <h3><a href="/view">Home</a></h3>
+                <h3><a href="/confirm">Delete Database</a></h3> 
+                <h3><a href="/logout">Logout</a></h3>
+            </div>
+            <a class="icon" onclick="myDropDownTwo()">&#9776;</a>
         </nav>
         <div class="main-heading">
             <p id="title-home">{{ data.name.capitalize() }} Logs</p>
         </div>
-    
+        <div id="log-table">
             <table id="table-data" class="table table-striped styled-table">
                 <thead class="thead-dark">
                     <th onclick="sortTable(0)">Date</th>

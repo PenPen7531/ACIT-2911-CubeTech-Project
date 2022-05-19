@@ -95,3 +95,19 @@ function closeDrop() {
   btn.style.display = 'block'
   search.style.display = 'flex'
 }
+
+function myDropDownTwo() {
+  const dropNav = document.getElementById("menu")
+  const btn = document.querySelector('.icon')
+  const btnTwo = document.querySelector('.icon-close')
+  btnTwo.style.display = 'block'
+  btn.style.display = 'none'
+  dropNav.style.display = 'block'
+}
+
+function closeDropTwo() {
+  const menu = document.getElementById("menu")
+  const btn = document.querySelector('.icon')
+  menu.style.display = 'none'
+  btn.style.display = 'block'
+}
