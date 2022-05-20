@@ -130,17 +130,19 @@ def create_page():
             employee_department = request.form.get("employee_department")
             employee_salary = request.form.get("employee_salary")
             employee_age = request.form.get("employee_age")
-            new_emp = Employee(employee_fname, employee_lname, employee_id,
-                               employee_department, int(employee_salary), int(employee_age))
-            COMPANY.add(new_emp)
-            COMPANY.save()
-            today = date.today()
-            time = datetime.now()
-            action = Data(today.strftime(
-                "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Created Employee: {employee_fname}")
-            LOGS.add(action)
-            LOGS.save()
-            return redirect("/view"), 302
+            if COMPANY.check_ID(employee_id): 
+                new_emp = Employee(employee_fname, employee_lname, employee_id,
+                                employee_department, int(employee_salary), int(employee_age))
+                COMPANY.add(new_emp)
+                COMPANY.save()
+                today = date.today()
+                time = datetime.now()
+                action = Data(today.strftime(
+                    "%b-%d-%Y"), f"{time.hour}:{time.minute}", f"Created Employee: {employee_fname}")
+                LOGS.add(action)
+                LOGS.save()
+                return redirect("/view"), 302
+            return "This ID is already taken", 404
     else:
         return render_template("signin_error.html"), 404
 

@@ -30,6 +30,12 @@ class Company():
             raise TypeError
         self.employees.append(employee)
 
+    def check_ID(self, emp_id):
+        for employee in self.employees:
+            if employee.employee_id==emp_id:
+                return False
+        return True
+
     def find_employee_by_id(self, employee_id):
         for employee in self.employees:
             if employee.employee_id == employee_id:

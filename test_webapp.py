@@ -94,7 +94,7 @@ def test_invalid_edit(client):
 def test_invalid_logout(client):
     assert client.get("/logout").status_code==404
 
-def test_invalid_create(client):
+def test_invalid_create_page(client):
     assert client.get("/create").status_code==404
 
 def test_invalid_single_view(client):
@@ -124,6 +124,10 @@ def test_create(client):
     login(client, "admin", "P@ssw0rd")
     assert client.get("/create").status_code == 200
     assert add_employee(client).status_code == 201
+
+def test_invalid_create(client):
+    login(client, "admin", "P@ssw0rd")
+    assert add_employee(client).status_code==404
 
 def test_search_home(client):
     assert login(client, "admin", "P@ssw0rd").status_code==201
