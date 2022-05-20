@@ -368,7 +368,7 @@ label, input {
 
 #form-db {
     padding-top: 1%;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
@@ -499,6 +499,10 @@ to {opacity:1 ;}
 
     #log-table {
         overflow: hidden;
+        width: 100%;
+    }
+
+    #form-db {
         width: 100%;
     }
 }
