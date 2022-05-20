@@ -196,7 +196,7 @@ label, input {
 .button-div {
     display: flex;
     flex-direction: column;
-    gap: 2 px;
+    gap: 2px;
 }
 
 .button-div button {
