@@ -51,23 +51,15 @@
         </select> -->
     <table id="table-data" class="table table-striped">
         <thead>
-            <th onclick="sortTable(0)">Employee ID</th>
-            <th onclick="sortTable(1)">Employee First Name</th>
-            <th onclick="sortTable(2)">Employee Last Name</th>
+            <th onclick="sortTable(1)">Employee Name</th>
             <th onclick="sortTable(3)">Employee Department</th>
-            <th onclick="sortTable(4)">Employee Salary</th>
-            <th onclick="sortTable(5)">Employee Age</th>
             <th colspan="2">Methods</th>
         </thead>
         <tbody>
         {% for employee in department %} 
             <tr>
-                <td>{{ employee.employee_id }}</td>
-                <td>{{ employee.first_name }}</td>
-                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.last_name }}, {{ employee.first_name }}</td>
                 <td>{{ employee.employee_department }}</td>
-                <td>${{ employee.employee_salary }}</td>
-                <td>{{ employee.employee_age }}</td>
                 <td><a href="/delete/{{ employee.employee_id }}">Delete</a></td>
                 <td><a href="/view/{{ employee.employee_id }}">View</a></td>
             </tr>
