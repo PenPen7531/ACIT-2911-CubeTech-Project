@@ -115,6 +115,7 @@ label {
 }
 
 .h1-head {
+    margin-top: 10rem;
     font-size: 7em;
 }
 
@@ -139,6 +140,7 @@ label, input {
 }
 
 #post-form {
+    /* margin-top: 5rem; */
     display: flex;
     flex-direction: column;
     width: 225px;
