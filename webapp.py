@@ -130,9 +130,15 @@ def create_page():
             employee_department = request.form.get("employee_department")
             employee_salary = request.form.get("employee_salary")
             employee_age = request.form.get("employee_age")
-            if COMPANY.check_ID(employee_id): 
+            employee_email = request.form.get("employee_email")
+            employee_phone = request.form.get("employee_phone")
+            employee_address = request.form.get("employee_address")
+            employee_gender = request.form.get("employee_gender")
+            date_hired = request.form.get("date_hired")
+
+            if COMPANY.check_ID(employee_id):
                 new_emp = Employee(employee_fname, employee_lname, employee_id,
-                                employee_department, int(employee_salary), int(employee_age))
+                                   employee_department, int(employee_salary), int(employee_age), employee_email, employee_phone, employee_address, employee_gender, date_hired)
                 COMPANY.add(new_emp)
                 COMPANY.save()
                 today = date.today()
@@ -179,6 +185,12 @@ def put_user(employee_id):
             emp_department = request.form.get("employee_department")
             emp_salary = request.form.get("employee_salary")
             emp_age = request.form.get("employee_age")
+            emp_email = request.form.get("employee_email")
+            emp_phone = request.form.get("employee_phone")
+            emp_address = request.form.get("employee_address")
+            emp_gender = request.form.get("employee_gender")
+            emp_hired = request.form.get("date_hired")
+
             if emp.first_name != emp_fname:
                 emp.first_name = emp_fname
             if emp.last_name != emp_lname:
@@ -191,6 +203,16 @@ def put_user(employee_id):
                 emp.employee_salary = int(emp_salary)
             if emp.employee_age != emp_age:
                 emp.employee_age = int(emp_age)
+            if emp.employee_email != emp_email:
+                emp.employee_email = emp_email
+            if emp.employee_phone != emp_phone:
+                emp.employee_phone = emp_phone
+            if emp.employee_address != emp_address:
+                emp.employee_address = emp_address
+            if emp.employee_gender != emp_gender:
+                emp.employee_gender = emp_gender
+            if emp.date_hired != emp_hired:
+                emp.date_hired = emp_hired
             COMPANY.save()
             today = date.today()
             time = datetime.now()
