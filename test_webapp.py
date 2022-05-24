@@ -150,7 +150,7 @@ def test_view(client):
 
 def test_view_employee(client):
     login(client, "admin", "P@ssw0rd")
-    assert client.get("/view/62689cd566f9aeeda66f0a0b").status_code == 201
+    assert client.get("/view/33330").status_code == 201
     assert client.get("/view/62689cd55dc").status_code == 404
 
 
