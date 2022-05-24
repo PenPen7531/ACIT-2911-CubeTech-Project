@@ -17,18 +17,21 @@
         <h1>Creating New Database</h1>
         <br>
         <br>
-        <form id='post-form' method = "POST">
-            <label for = "database_name"></label>
-            <input type="text" name = "database_name" id ="post_input" required placeholder="Company Name"/>
-            <div id="create-admin-input">
-                <label for = "username"></label>
-                <input type="text" name = "username" id ="post_input" required placeholder="Username" />
-                <label for = "password"></label>
-                <input type="text" name = "password" id ="post_input" required placeholder="Password" />
-            </div>  
-            <input type = "submit" value = "Create Database" />
-            <a href="/">Cancel</a>
-        </form>
+        <div class="delete-db">
+            <form id='form-db' method = "POST">
+                <label for = "database_name">Company Name</label>
+                <input type="text" name = "database_name" id ="post_input"/>
+                <br>
+                <label for = "username">Username</label>
+                <input type="text" name = "username" id ="post_input"/>
+                <br>
+                <label for = "password">Password</label>
+                <input type="text" name = "password" id ="post_input"/>
+                <br> 
+                <input type = "submit" class='btn btn-primary' value = "Create Database" />
+                <a href="/" id='view-cancel' class='btn btn-danger'>Cancel</a>
+            </form>
+        </div>
     </div>
 </body>
 </html>

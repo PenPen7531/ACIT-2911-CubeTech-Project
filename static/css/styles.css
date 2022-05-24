@@ -144,11 +144,6 @@ label, input {
     width: 225px;
 }
 
-#create-admin-input {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 #flex-mid > h1 {
     background-color: #2e902c;
     padding-right: 5rem;
