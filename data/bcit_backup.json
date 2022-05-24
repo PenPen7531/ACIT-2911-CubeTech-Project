@@ -1,0 +1,24 @@
+[
+  {
+    "first_name": "Melissa",
+    "last_name": "Rodriquez",
+    "employee_id": "26243",
+    "employee_department": "Operations",
+    "employee_salary": 43541,
+    "employee_age": 47,
+    "employee_email": "melissa_r@something.ca",
+    "employee_phone": "777-998-0987",
+    "employee_address": "24 test st, Vancouver BC"
+  },
+  {
+    "first_name": "Earlene",
+    "last_name": "Gross",
+    "employee_id": "72656",
+    "employee_department": "Operations",
+    "employee_salary": 61164,
+    "employee_age": 51,
+    "employee_email": "earlene_g@something.ca",
+    "employee_phone": "777-922-0117",
+    "employee_address": "09999 hello st, Vancouver BC"
+  }
+]

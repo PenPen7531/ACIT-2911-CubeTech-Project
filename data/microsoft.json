@@ -1,10 +1,15 @@
 [
   {
-    "first_name": "polo",
-    "last_name": "polo",
-    "employee_id": "96845",
-    "employee_department": "yari",
-    "employee_salary": 1900,
-    "employee_age": 23
+    "first_name": "Suzette ",
+    "last_name": "Cummings",
+    "employee_id": "12445",
+    "employee_department": "Operations",
+    "employee_salary": 51442,
+    "employee_age": 24,
+    "employee_email": "suzettecummings@silodyne.com",
+    "employee_phone": " +1 (802) 560-2357",
+    "employee_address": "621 Hunterfly Place, Waterview, Pennsylvania, 9245",
+    "employee_gender": "female",
+    "date_hired": "Fri Nov 03 2017 03:10:51 GMT-0700 (Pacific Daylight Time)"
   }
 ]

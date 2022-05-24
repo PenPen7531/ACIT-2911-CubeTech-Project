@@ -1,386 +1,301 @@
 [
   {
-    "employee_id": "488668",
-    "first_name": "Thornton",
-    "last_name": "Cook",
-    "employee_department": "SoftWare Development",
-    "employee_age": 45,
-    "employee_salary": 29814
-  },
-  {
-    "employee_id": "566544",
-    "first_name": "Bridges",
-    "last_name": "Ayala",
-    "employee_department": "IT",
-    "employee_age": 36,
-    "employee_salary": 70581
-  },
-  {
-    "employee_id": "745645",
-    "first_name": "Frankie",
-    "last_name": "Hayden",
-    "employee_department": "IT",
-    "employee_age": 25,
-    "employee_salary": 56797
-  },
-  {
-    "employee_id": "079764",
-    "first_name": "Dillon",
-    "last_name": "May",
-    "employee_department": "IT",
-    "employee_age": 57,
-    "employee_salary": 52408
-  },
-  {
-    "employee_id": "655544",
-    "first_name": "Helga",
-    "last_name": "Cabrera",
-    "employee_department": "IT",
-    "employee_age": 22,
-    "employee_salary": 68513
-  },
-  {
-    "employee_id": "079876",
-    "first_name": "Newman",
-    "last_name": "Frederick",
-    "employee_department": "IT",
-    "employee_age": 22,
-    "employee_salary": 89846
-  },
-  {
-    "employee_id": "897976",
-    "first_name": "Rosella",
-    "last_name": "Hahn",
-    "employee_department": "IT",
-    "employee_age": 43,
-    "employee_salary": 63150
-  },
-  {
-    "employee_id": "090977",
-    "first_name": "Joanne",
-    "last_name": "Parker",
-    "employee_department": "IT",
-    "employee_age": 41,
-    "employee_salary": 44012
-  },
-  {
-    "employee_id": "966876",
-    "first_name": "Lynne",
-    "last_name": "Sellers",
-    "employee_department": "Finance",
-    "employee_age": 48,
-    "employee_salary": 69520
-  },
-  {
-    "employee_id": "909099",
-    "first_name": "Lara",
-    "last_name": "Mccarthy",
-    "employee_department": "Finance",
-    "employee_age": 24,
-    "employee_salary": 49590
-  },
-  {
-    "employee_id": "666688",
-    "first_name": "Elsa",
-    "last_name": "Carlson",
-    "employee_department": "Finance",
-    "employee_age": 51,
-    "employee_salary": 41710
-  },
-  {
-    "employee_id": "990909",
-    "first_name": "Suzanne",
-    "last_name": "Rasmussen",
-    "employee_department": "Finance",
-    "employee_age": 54,
-    "employee_salary": 44166
-  },
-  {
-    "employee_id": "676767",
-    "first_name": "Elba",
-    "last_name": "Mcclain",
-    "employee_department": "Finance",
-    "employee_age": 47,
-    "employee_salary": 80471
-  },
-  {
-    "employee_id": "889898",
-    "first_name": "Stout",
-    "last_name": "Hopper",
-    "employee_department": "Finance",
-    "employee_age": 40,
-    "employee_salary": 79234
-  },
-  {
-    "employee_id": "565655",
-    "first_name": "Earlene",
-    "last_name": "Roman",
-    "employee_department": "Finance",
-    "employee_age": 51,
-    "employee_salary": 85210
-  },
-  {
-    "employee_id": "129746",
-    "first_name": "Kathleen",
-    "last_name": "Baird",
-    "employee_department": "Finance",
-    "employee_age": 37,
-    "employee_salary": 38879
-  },
-  {
-    "employee_id": "945795",
-    "first_name": "Ramona",
-    "last_name": "Dennis",
-    "employee_department": "Finance",
-    "employee_age": 28,
-    "employee_salary": 73266
-  },
-  {
-    "employee_id": "975947",
-    "first_name": "Justine",
-    "last_name": "Hall",
-    "employee_department": "Design",
+    "first_name": "Robles ",
+    "last_name": "Byers",
+    "employee_id": "09091",
+    "employee_department": "Marketing",
+    "employee_salary": 51805,
     "employee_age": 23,
-    "employee_salary": 58155
+    "employee_email": "roblesbyers@silodyne.com",
+    "employee_phone": " +1 (901) 494-3523",
+    "employee_address": "609 Cooke Court, Finzel, Kansas, 3935",
+    "employee_gender": "female",
+    "date_hired": "Fri Jul 05 2019 09:16:56 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "979754",
-    "first_name": "Sherrie",
-    "last_name": "Petty",
-    "employee_department": "Design",
-    "employee_age": 29,
-    "employee_salary": 40177
-  },
-  {
-    "employee_id": "994565",
-    "first_name": "Robin",
-    "last_name": "Baker",
-    "employee_department": "Design",
-    "employee_age": 22,
-    "employee_salary": 90570
-  },
-  {
-    "employee_id": "079775",
-    "first_name": "Corina",
-    "last_name": "Travis",
-    "employee_department": "Design",
-    "employee_age": 50,
-    "employee_salary": 89649
-  },
-  {
-    "employee_id": "985464",
-    "first_name": "Reeves",
-    "last_name": "Donaldson",
-    "employee_department": "Design",
-    "employee_age": 44,
-    "employee_salary": 29680
-  },
-  {
-    "employee_id": "947694",
-    "first_name": "Ramos",
-    "last_name": "Ewing",
-    "employee_department": "Design",
-    "employee_age": 54,
-    "employee_salary": 24083
-  },
-  {
-    "employee_id": "979874",
-    "first_name": "Watts",
-    "last_name": "Griffith",
-    "employee_department": "Design",
-    "employee_age": 46,
-    "employee_salary": 86171
-  },
-  {
-    "employee_id": "856764",
-    "first_name": "Hicks",
-    "last_name": "Garrett",
-    "employee_department": "Design",
-    "employee_age": 22,
-    "employee_salary": 61392
-  },
-  {
-    "employee_id": "985694",
-    "first_name": "Coleman",
-    "last_name": "Strickland",
-    "employee_department": "Design",
-    "employee_age": 40,
-    "employee_salary": 20191
-  },
-  {
-    "employee_id": "769757",
-    "first_name": "Jana",
-    "last_name": "Montgomery",
-    "employee_department": "Design",
-    "employee_age": 54,
-    "employee_salary": 40859
-  },
-  {
-    "employee_id": "598797",
-    "first_name": "Katie",
-    "last_name": "Walsh",
-    "employee_department": "Accounting",
+    "first_name": "Noreen ",
+    "last_name": "Pruitt",
+    "employee_id": "54511",
+    "employee_department": "Finance",
+    "employee_salary": 141572,
     "employee_age": 31,
-    "employee_salary": 40663
+    "employee_email": "noreenpruitt@silodyne.com",
+    "employee_phone": " +1 (805) 519-3529",
+    "employee_address": "248 Rutledge Street, Bennett, Wyoming, 8311",
+    "employee_gender": "female",
+    "date_hired": "Fri Nov 20 2020 13:12:56 GMT-0800 (Pacific Standard Time)"
   },
   {
-    "employee_id": "109202",
-    "first_name": "Armstrong",
-    "last_name": "Kirby",
-    "employee_department": "Accounting",
-    "employee_age": 27,
-    "employee_salary": 29055
+    "first_name": "Campbell ",
+    "last_name": "Huff",
+    "employee_id": "09999",
+    "employee_department": "Finance",
+    "employee_salary": 103965,
+    "employee_age": 40,
+    "employee_email": "campbellhuff@silodyne.com",
+    "employee_phone": " +1 (858) 537-3864",
+    "employee_address": "561 Rost Place, Crumpler, Florida, 5587",
+    "employee_gender": "male",
+    "date_hired": "Thu Sep 03 2020 20:44:34 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "180122",
-    "first_name": "Dickerson",
-    "last_name": "Simpson",
-    "employee_department": "Accounting",
-    "employee_age": 25,
-    "employee_salary": 76695
-  },
-  {
-    "employee_id": "109802",
-    "first_name": "Pruitt",
-    "last_name": "Torres",
-    "employee_department": "Accounting",
-    "employee_age": 26,
-    "employee_salary": 25170
-  },
-  {
-    "employee_id": "109801",
-    "first_name": "Chang",
-    "last_name": "Hill",
-    "employee_department": "Accounting",
-    "employee_age": 43,
-    "employee_salary": 32041
-  },
-  {
-    "employee_id": "279777",
-    "first_name": "Yvette",
-    "last_name": "Edwards",
-    "employee_department": "Accounting",
-    "employee_age": 28,
-    "employee_salary": 98312
-  },
-  {
-    "employee_id": "129077",
-    "first_name": "Small",
-    "last_name": "Bean",
-    "employee_department": "Accounting",
-    "employee_age": 23,
-    "employee_salary": 99052
-  },
-  {
-    "employee_id": "794572",
-    "first_name": "Shawna",
-    "last_name": "Dejesus",
-    "employee_department": "Accounting",
-    "employee_age": 36,
-    "employee_salary": 21491
-  },
-  {
-    "employee_id": "747677",
-    "first_name": "Stafford",
-    "last_name": "Mcneil",
-    "employee_department": "Accounting",
-    "employee_age": 48,
-    "employee_salary": 93308
-  },
-  {
-    "employee_id": "759797",
-    "first_name": "Barnes",
-    "last_name": "Lynn",
-    "employee_department": "Accounting",
+    "first_name": "Snider ",
+    "last_name": "Hardy",
+    "employee_id": "00997",
+    "employee_department": "Finance",
+    "employee_salary": 62213,
     "employee_age": 21,
-    "employee_salary": 99817
+    "employee_email": "sniderhardy@silodyne.com",
+    "employee_phone": " +1 (974) 511-3557",
+    "employee_address": "991 Hewes Street, Cashtown, Maryland, 2346",
+    "employee_gender": "male",
+    "date_hired": "Wed Apr 25 2018 08:41:58 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "797978",
-    "first_name": "Keisha",
-    "last_name": "Bowman",
-    "employee_department": "Accounting",
-    "employee_age": 56,
-    "employee_salary": 63396
+    "first_name": "Gena ",
+    "last_name": "Frazier",
+    "employee_id": "99099",
+    "employee_department": "Finance",
+    "employee_salary": 63970,
+    "employee_age": 33,
+    "employee_email": "genafrazier@silodyne.com",
+    "employee_phone": " +1 (863) 463-3141",
+    "employee_address": "272 Merit Court, Alafaya, Virginia, 575",
+    "employee_gender": "female",
+    "date_hired": "Fri May 02 2014 02:19:56 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "099798",
-    "first_name": "Eva",
-    "last_name": "Mcmillan",
-    "employee_department": "Accounting",
-    "employee_age": 24,
-    "employee_salary": 60101
+    "first_name": "Anthony ",
+    "last_name": "Finley",
+    "employee_id": "10010",
+    "employee_department": "Finance",
+    "employee_salary": 132374,
+    "employee_age": 39,
+    "employee_email": "anthonyfinley@silodyne.com",
+    "employee_phone": " +1 (869) 474-2546",
+    "employee_address": "135 Utica Avenue, Temperanceville, Oklahoma, 1780",
+    "employee_gender": "male",
+    "date_hired": "Tue Aug 12 2014 19:35:59 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "967686",
-    "first_name": "Nell",
-    "last_name": "Fowler",
-    "employee_department": "Accounting",
-    "employee_age": 41,
-    "employee_salary": 68221
+    "first_name": "Pierce ",
+    "last_name": "Hoover",
+    "employee_id": "65644",
+    "employee_department": "Finance",
+    "employee_salary": 143889,
+    "employee_age": 28,
+    "employee_email": "piercehoover@silodyne.com",
+    "employee_phone": " +1 (942) 549-2038",
+    "employee_address": "499 Quincy Street, Kiskimere, Pennsylvania, 7907",
+    "employee_gender": "male",
+    "date_hired": "Wed Feb 03 2016 12:04:53 GMT-0800 (Pacific Standard Time)"
   },
   {
-    "employee_id": "989888",
-    "first_name": "Marva",
+    "first_name": "Cervantes ",
+    "last_name": "Camacho",
+    "employee_id": "90903",
+    "employee_department": "Finance",
+    "employee_salary": 71622,
+    "employee_age": 33,
+    "employee_email": "cervantescamacho@silodyne.com",
+    "employee_phone": " +1 (916) 405-2068",
+    "employee_address": "687 Exeter Street, Ernstville, Michigan, 1649",
+    "employee_gender": "male",
+    "date_hired": "Fri Apr 06 2018 02:05:27 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Jensen ",
     "last_name": "Morgan",
-    "employee_department": "Accounting",
-    "employee_age": 21,
-    "employee_salary": 31188
+    "employee_id": "33330",
+    "employee_department": "Finance",
+    "employee_salary": 126617,
+    "employee_age": 23,
+    "employee_email": "jensenmorgan@silodyne.com",
+    "employee_phone": " +1 (934) 528-3426",
+    "employee_address": "193 Windsor Place, Lavalette, Georgia, 7549",
+    "employee_gender": "male",
+    "date_hired": "Tue Mar 16 2021 21:11:22 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "767676",
-    "first_name": "Opal",
-    "last_name": "Cooley",
-    "employee_department": "Accounting",
-    "employee_age": 51,
-    "employee_salary": 29973
+    "first_name": "Keith ",
+    "last_name": "Santana",
+    "employee_id": "99333",
+    "employee_department": "Finance",
+    "employee_salary": 118036,
+    "employee_age": 33,
+    "employee_email": "keithsantana@silodyne.com",
+    "employee_phone": " +1 (911) 448-3607",
+    "employee_address": "675 Cambridge Place, Sharon, Colorado, 4456",
+    "employee_gender": "male",
+    "date_hired": "Sat Mar 05 2022 16:45:49 GMT-0800 (Pacific Standard Time)"
   },
   {
-    "employee_id": "098406",
-    "first_name": "Kenya",
-    "last_name": "Hensley",
-    "employee_department": "SoftWare Development",
-    "employee_age": 54,
-    "employee_salary": 61488
+    "first_name": "Megan ",
+    "last_name": "Puckett",
+    "employee_id": "12127",
+    "employee_department": "Finance",
+    "employee_salary": 112668,
+    "employee_age": 22,
+    "employee_email": "meganpuckett@silodyne.com",
+    "employee_phone": " +1 (990) 510-2566",
+    "employee_address": "140 Rogers Avenue, Hilltop, North Dakota, 1015",
+    "employee_gender": "female",
+    "date_hired": "Sat Apr 30 2022 13:14:44 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "109099",
-    "first_name": "Augusta",
-    "last_name": "Wolfe",
-    "employee_department": "SoftWare Development",
-    "employee_age": 48,
-    "employee_salary": 44499
+    "first_name": "Ayers ",
+    "last_name": "Daugherty",
+    "employee_id": "34567",
+    "employee_department": "Finance",
+    "employee_salary": 131349,
+    "employee_age": 22,
+    "employee_email": "ayersdaugherty@silodyne.com",
+    "employee_phone": " +1 (831) 506-2643",
+    "employee_address": "644 Cleveland Street, Wilmington, Minnesota, 2954",
+    "employee_gender": "male",
+    "date_hired": "Tue Jan 06 2015 11:02:47 GMT-0800 (Pacific Standard Time)"
   },
   {
-    "employee_id": "676974",
-    "first_name": "Emma",
-    "last_name": "Mckenzie",
-    "employee_department": "SoftWare Development",
-    "employee_age": 29,
-    "employee_salary": 99816
+    "first_name": "Brock ",
+    "last_name": "Randall",
+    "employee_id": "89898",
+    "employee_department": "Finance",
+    "employee_salary": 140638,
+    "employee_age": 23,
+    "employee_email": "brockrandall@silodyne.com",
+    "employee_phone": " +1 (820) 562-2799",
+    "employee_address": "779 Kensington Walk, Brazos, Rhode Island, 4301",
+    "employee_gender": "male",
+    "date_hired": "Wed Nov 17 2021 04:03:49 GMT-0800 (Pacific Standard Time)"
   },
   {
-    "employee_id": "406975",
-    "first_name": "Ashlee",
-    "last_name": "Alvarado",
-    "employee_department": "SoftWare Development",
+    "first_name": "Conner ",
+    "last_name": "Guthrie",
+    "employee_id": "20945",
+    "employee_department": "Finance",
+    "employee_salary": 105993,
+    "employee_age": 36,
+    "employee_email": "connerguthrie@silodyne.com",
+    "employee_phone": " +1 (938) 418-2786",
+    "employee_address": "382 Pulaski Street, Tuskahoma, California, 3979",
+    "employee_gender": "male",
+    "date_hired": "Tue Jan 28 2020 03:16:57 GMT-0800 (Pacific Standard Time)"
+  },
+  {
+    "first_name": "Susana ",
+    "last_name": "Fitzgerald",
+    "employee_id": "12345",
+    "employee_department": "Finance",
+    "employee_salary": 79880,
+    "employee_age": 22,
+    "employee_email": "susanafitzgerald@silodyne.com",
+    "employee_phone": " +1 (957) 528-3780",
+    "employee_address": "760 Crooke Avenue, Shaft, Alabama, 3410",
+    "employee_gender": "female",
+    "date_hired": "Sun May 26 2019 22:21:11 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Wilma ",
+    "last_name": "Davis",
+    "employee_id": "87905",
+    "employee_department": "Finance",
+    "employee_salary": 67601,
+    "employee_age": 30,
+    "employee_email": "wilmadavis@silodyne.com",
+    "employee_phone": " +1 (912) 410-2122",
+    "employee_address": "506 Harbor Court, Whitmer, Wisconsin, 2711",
+    "employee_gender": "female",
+    "date_hired": "Thu Sep 24 2020 06:46:38 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Wallace ",
+    "last_name": "Rocha",
+    "employee_id": "45126",
+    "employee_department": "Finance",
+    "employee_salary": 96753,
+    "employee_age": 37,
+    "employee_email": "wallacerocha@silodyne.com",
+    "employee_phone": " +1 (881) 405-2995",
+    "employee_address": "675 Caton Place, Adamstown, Alaska, 7315",
+    "employee_gender": "male",
+    "date_hired": "Wed Jul 26 2017 19:52:34 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Wilda ",
+    "last_name": "Carr",
+    "employee_id": "67456",
+    "employee_department": "IT",
+    "employee_salary": 72477,
+    "employee_age": 37,
+    "employee_email": "wildacarr@silodyne.com",
+    "employee_phone": " +1 (872) 451-3075",
+    "employee_address": "281 Montague Terrace, Gulf, Montana, 1786",
+    "employee_gender": "female",
+    "date_hired": "Fri Apr 22 2022 16:32:03 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Janine ",
+    "last_name": "Bonner",
+    "employee_id": "09876",
+    "employee_department": "IT",
+    "employee_salary": 75141,
+    "employee_age": 40,
+    "employee_email": "janinebonner@silodyne.com",
+    "employee_phone": " +1 (856) 523-2698",
+    "employee_address": "678 Main Street, Adamstown, Connecticut, 7435",
+    "employee_gender": "female",
+    "date_hired": "Fri Nov 20 2020 13:20:29 GMT-0800 (Pacific Standard Time)"
+  },
+  {
+    "first_name": "Kirby ",
+    "last_name": "Meyers",
+    "employee_id": "00011",
+    "employee_department": "IT",
+    "employee_salary": 61133,
+    "employee_age": 23,
+    "employee_email": "kirbymeyers@silodyne.com",
+    "employee_phone": " +1 (864) 556-2635",
+    "employee_address": "715 Llama Court, Succasunna, New Hampshire, 2468",
+    "employee_gender": "male",
+    "date_hired": "Thu Sep 21 2017 11:24:44 GMT-0700 (Pacific Daylight Time)"
+  },
+  {
+    "first_name": "Consuelo ",
+    "last_name": "Owen",
+    "employee_id": "98985",
+    "employee_department": "IT",
+    "employee_salary": 98376,
     "employee_age": 28,
-    "employee_salary": 71686
+    "employee_email": "consueloowen@silodyne.com",
+    "employee_phone": " +1 (849) 516-3424",
+    "employee_address": "910 Ellery Street, Stockwell, South Dakota, 9236",
+    "employee_gender": "female",
+    "date_hired": "Mon Jun 28 2021 17:35:13 GMT-0700 (Pacific Daylight Time)"
   },
   {
-    "employee_id": "094874",
-    "first_name": "Bobbie",
-    "last_name": "Mclaughlin",
-    "employee_department": "SoftWare Development",
-    "employee_age": 58,
-    "employee_salary": 36192
+    "first_name": "Church ",
+    "last_name": "Fleming",
+    "employee_id": "74891",
+    "employee_department": "IT",
+    "employee_salary": 62173,
+    "employee_age": 22,
+    "employee_email": "churchfleming@silodyne.com",
+    "employee_phone": " +1 (951) 593-3455",
+    "employee_address": "256 Norwood Avenue, Weeksville, Washington, 7705",
+    "employee_gender": "male",
+    "date_hired": "Sat Feb 10 2018 05:35:12 GMT-0800 (Pacific Standard Time)"
   },
   {
-    "employee_id": "498576",
-    "first_name": "Ilene",
-    "last_name": "Figueroa",
-    "employee_department": "SoftWare Development",
-    "employee_age": 34,
-    "employee_salary": 53072
+    "first_name": "Roseann ",
+    "last_name": "Long",
+    "employee_id": "00987",
+    "employee_department": "IT",
+    "employee_salary": 143547,
+    "employee_age": 27,
+    "employee_email": "roseannlong@silodyne.com",
+    "employee_phone": " +1 (939) 527-3660",
+    "employee_address": "858 Bristol Street, Callaghan, Indiana, 4316",
+    "employee_gender": "female",
+    "date_hired": "Sat Apr 17 2021 04:15:08 GMT-0700 (Pacific Daylight Time)"
   }
 ]
