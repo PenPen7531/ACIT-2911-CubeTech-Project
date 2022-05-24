@@ -19,6 +19,11 @@ class Company():
                         employee["employee_department"],
                         employee["employee_salary"],
                         employee["employee_age"],
+                        employee["employee_email"],
+                        employee["employee_phone"],
+                        employee["employee_address"],
+                        employee["employee_gender"],
+                        employee["date_hired"]
 
                     ) for employee in json.load(file)
                 ]
@@ -32,7 +37,7 @@ class Company():
 
     def check_ID(self, emp_id):
         for employee in self.employees:
-            if employee.employee_id==emp_id:
+            if employee.employee_id == emp_id:
                 return False
         return True
 
