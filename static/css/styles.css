@@ -386,7 +386,14 @@ label, input {
 }
 
 #view-cancel {
+    width: 100%;
     align-self: flex-end;
+}
+
+.can-sub {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 /* Popup arrow */
 /* .popup .popuptext::after {
