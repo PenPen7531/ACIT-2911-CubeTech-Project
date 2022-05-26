@@ -384,6 +384,10 @@ label, input {
     padding-top: 40px;
     font-size: 16px;
 }
+
+#view-cancel {
+    align-self: flex-end;
+}
 /* Popup arrow */
 /* .popup .popuptext::after {
 content: "";
