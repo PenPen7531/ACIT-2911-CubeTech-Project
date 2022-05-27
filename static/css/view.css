@@ -16,8 +16,9 @@
 
 .emp_id{
     font-size: 25px;
-    font-weight: bold;
+    font-weight:normal;
     padding-left: 2rem;
+    text-align: center;
 }
 .home{
     font-size: 20px;
